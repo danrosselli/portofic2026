@@ -1,0 +1,46 @@
+<!-- ══════════════ 02 · HISTÓRIA DA ARQUEOLOGIA NO BRASIL ══════════════ -->
+<section class="section section--dark" id="historia">
+  <div class="section-head">
+    <p class="section-num mono">02</p>
+    <h2 class="section-title">História da arqueologia <em>no Brasil</em></h2>
+    <p class="section-dek">
+      Da coleta de objetos no período colonial aos laboratórios modernos: uma linha
+      do tempo dos nomes e das descobertas que construíram a arqueologia brasileira.
+    </p>
+  </div>
+
+  <div class="timeline" data-timeline>
+    <div class="timeline-track" aria-label="Marcos da arqueologia brasileira">
+      {% for t in project.timeline %}
+      <button
+        class="timeline-node mono"
+        id="tab-{{ t.id }}"
+        aria-controls="panel-{{ t.id }}"
+        aria-pressed="{{ 'true' if loop.first else 'false' }}"
+        data-timeline-tab="{{ t.id }}">
+        <span class="node-dot" aria-hidden="true"></span>
+        <span class="node-marker">{{ t.marker }}</span>
+      </button>
+      {% endfor %}
+    </div>
+    <div class="timeline-panels">
+      {% for t in project.timeline %}
+      <div class="timeline-panel{{ ' is-active' if loop.first else '' }}" id="panel-{{ t.id }}" aria-labelledby="tab-{{ t.id }}" data-timeline-panel="{{ t.id }}">
+        <p class="mono panel-marker">{{ t.marker }}</p>
+        <h3>{{ t.title }}</h3>
+        <p>{{ t.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="timeline-fact">
+    <p class="mono">Destaque do trabalho</p>
+    <p class="timeline-fact-text">
+      A descoberta de <strong>Luzia</strong> — um dos esqueletos humanos mais
+      antigos já encontrados no Brasil, descoberto em Minas Gerais, com
+      aproximadamente 11,5 mil anos — mostra que a história do país começa muito
+      antes dos registros escritos.
+    </p>
+  </div>
+</section>

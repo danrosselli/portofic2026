@@ -1,0 +1,97 @@
+<!-- ══════════════ 05 · ARTE RUPESTRE ══════════════ -->
+<section class="section section--dark section--rockart" id="arte-rupestre">
+  <div class="section-head">
+    <p class="section-num mono">05</p>
+    <h2 class="section-title">Arte rupestre: <em>sinais</em> na pedra</h2>
+    <p class="section-dek">
+      A arte rupestre é o conjunto de desenhos, pinturas e gravuras feitos por povos
+      antigos em paredes e superfícies de pedras, como cavernas e paredões rochosos.
+      Geralmente representavam animais, pessoas, cenas de caça, símbolos e
+      atividades do cotidiano.
+    </p>
+  </div>
+
+  <div class="rockart-duo">
+    <div class="rockart-type">
+      <span class="swatch swatch--paint" aria-hidden="true"></span>
+      <h3>Pinturas rupestres</h3>
+      <p>
+        Desenhos feitos sobre as pedras usando pigmentos naturais, como carvão,
+        terra e minerais.
+      </p>
+      <p class="mono tech-chip">Técnicas: aplicação de pigmentos · pintura com os dedos · sopro (contornos de mãos)</p>
+    </div>
+    <div class="rockart-type">
+      <span class="swatch swatch--engrave" aria-hidden="true"></span>
+      <h3>Gravuras rupestres</h3>
+      <p>
+        Desenhos feitos raspando, cortando ou marcando a superfície da rocha,
+        deixando os traços gravados nela.
+      </p>
+      <p class="mono tech-chip">Instrumentos: pedras e instrumentos de madeira usados para gravar</p>
+    </div>
+  </div>
+
+  <div class="rockart-materials">
+    <p class="mono block-label">Materiais empregados pelos artistas do passado</p>
+    <ul class="materials-list">
+      <li><span class="chip chip--charcoal" aria-hidden="true"></span><span><strong>Carvão vegetal</strong> — cor preta</span></li>
+      <li><span class="chip chip--iron" aria-hidden="true"></span><span><strong>Óxidos de ferro e minerais</strong> — tons vermelhos e amarelos</span></li>
+      <li><span class="chip chip--clay" aria-hidden="true"></span><span><strong>Argila e terra</strong> — diferentes cores</span></li>
+      <li><span class="chip chip--binder" aria-hidden="true"></span><span><strong>Gordura, seiva ou água</strong> — para misturar e fixar os pigmentos</span></li>
+    </ul>
+    <p class="mono note-inline">
+      As representações provavelmente tinham diferentes significados: animais,
+      pessoas, cenas de caça, rituais, atividades do cotidiano e símbolos. Também
+      podem ter expressado crenças, transmitido conhecimentos e registrado
+      acontecimentos — <em>interpretações que permanecem em aberto</em>.
+    </p>
+  </div>
+
+  <div class="rockart-sites">
+    <p class="mono block-label">Principais sítios de arte rupestre citados no trabalho</p>
+    <ul class="sites-chips">
+      <li>Serra da Capivara — PI <span class="mono">(um dos maiores e mais importantes conjuntos de pinturas rupestres do país)</span></li>
+      <li>Parque Nacional do Catimbau — PE</li>
+      <li>Lajedo de Soledade — RN</li>
+      <li>Lagoa Santa — MG</li>
+      <li>Serra do Cipó — MG</li>
+    </ul>
+  </div>
+
+  <div class="gallery" data-gallery>
+    {% set arts = [
+      { id: "capivara", title: "Serra da Capivara — painel de pinturas", text: "Pinturas rupestres em parede rochosa no Parque Nacional da Serra da Capivara (Piauí), um dos maiores conjuntos de arte rupestre do país. Fotografia de acervo aberto.", src: "/img/rockart-capivara.jpg", credit: "Foto: Vitor 1234 · Wikimedia Commons · CC BY-SA 3.0", srcUrl: "https://commons.wikimedia.org/wiki/File:Serra_da_Capivara_-_Several_Paintings_1.jpg" },
+      { id: "catimbau", title: "Vale do Catimbau — pinturas em abrigo", text: "Pinturas rupestres no Parque Nacional do Catimbau (Pernambuco), citado no trabalho entre os principais sítios de arte rupestre. Fotografia de acervo aberto.", src: "/img/rockart-catimbau.jpg", credit: "Foto: correiarodrigo · Wikimedia Commons · CC BY-SA 2.0", srcUrl: "https://commons.wikimedia.org/wiki/File:Pinturas_Rupestres_-_Vale_do_Catimbau_-_Pernambuco_-_Brasil.jpg" },
+      { id: "lapa-santo", title: "Lagoa Santa — figura antropomórfica", text: "Registro documental de pintura rupestre antropomórfica na Lapa do Santo, região de Lagoa Santa (Minas Gerais), com representação esquemática ao lado. Fotografia de acervo aberto, documentação científica.", src: "/img/rockart-lapa-santo.png", credit: "Foto: W. A. Neves et al. · Wikimedia Commons · CC BY-SA 4.0", srcUrl: "https://commons.wikimedia.org/wiki/File:Lapa_do_Santo_-_Rock_art_-_C-shaped_head_anthropomorph_Picture_and_schematic_representation.png" },
+      { id: "soledade", title: "Lajedo de Soledade — desenho de arara", text: "Desenho rupestre de uma arara no Lajedo de Soledade (Apodi, Rio Grande do Norte), entre os sítios de arte rupestre citados no trabalho. Fotografia de acervo aberto.", src: "/img/rockart-soledade.jpg", credit: "Foto: Fabiobarros · Wikimedia Commons · CC BY-SA 4.0", srcUrl: "https://commons.wikimedia.org/wiki/File:Desenho_da_arara_-_lajedo_de_soledade_-_apodi.jpg" }
+    ] %}
+    {% for a in arts %}
+    <figure class="art-card reveal">
+      <button class="art-open" type="button" data-art-open data-art-title="{{ a.title }}" data-art-text="{{ a.text }} {{ a.credit }}. Fonte: {{ a.srcUrl }}" aria-haspopup="dialog">
+        <img src="{{ a.src | url }}" alt="{{ a.title }} — fotografia de arte rupestre brasileira" loading="lazy">
+        <span class="art-zoom mono" aria-hidden="true">ampliar ⊕</span>
+      </button>
+      <figcaption>
+        <span class="mono art-tag">Fotografia · Wikimedia Commons</span>
+        <h3>{{ a.title }}</h3>
+        <p>{{ a.text }}</p>
+        <p class="mono art-credit">{{ a.credit }} · <a href="{{ a.srcUrl }}" target="_blank" rel="noopener noreferrer">fonte</a></p>
+      </figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+  <p class="mono gallery-credit-note">
+    Fotografias de acervo aberto do Wikimedia Commons (licenças CC BY-SA 2.0 / 3.0 /
+    4.0), armazenadas localmente neste site, com os créditos indicados em cada
+    legenda. Os significados das representações permanecem em aberto.
+  </p>
+
+  <dialog class="art-dialog" data-art-dialog aria-labelledby="art-dialog-title">
+    <button class="art-close mono" type="button" data-art-close aria-label="Fechar">fechar ×</button>
+    <img class="art-dialog-img" data-art-dialog-img alt="">
+    <p class="mono art-dialog-tag">Fotografia · acervo aberto</p>
+    <h3 id="art-dialog-title" data-art-dialog-title></h3>
+    <p data-art-dialog-text></p>
+  </dialog>
+</section>

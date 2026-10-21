@@ -1,0 +1,72 @@
+<!-- ══════════════ 00 · ABERTURA ══════════════ -->
+<section class="hero" id="inicio">
+  <img class="hero-bg" src="{{ '/img/hero-paredao.svg' | url }}" alt="" aria-hidden="true">
+  <div class="hero-shade" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <p class="hero-kicker mono">Colégio Porto Alvorada · Porto FIC 2026 · Jaú — SP</p>
+    <h1 class="hero-title">
+      <span class="hero-line hero-line--one">Arqueologia</span>
+      <span class="hero-line hero-line--two">no <em>Brasil</em></span>
+    </h1>
+    <p class="hero-sub mono">Archaeology in Brazil</p>
+    <p class="hero-lead">
+      Milhares de anos antes de 1500, povos diversos já ocupavam o território
+      brasileiro — construíam, pintavam, enterravam seus mortos e transformavam a
+      paisagem. Este site é uma expedição digital por esses vestígios: uma visita a
+      um museu arqueológico imaginário, organizada a partir do trabalho de campo
+      dos oito pesquisadores que assinam este estudo.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn--primary" href="{{ '/' | url }}#oque-e">Começar a exploração</a>
+      <a class="btn btn--ghost" href="{{ '/' | url }}#sitios">Abrir o mapa de sítios</a>
+    </div>
+    <p class="hero-scroll mono" aria-hidden="true">rolar para descer ↓</p>
+  </div>
+
+  <div class="hero-stamp" aria-hidden="true">
+    <svg viewBox="0 0 120 120" role="presentation">
+      <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+      <circle cx="60" cy="60" r="46" fill="none" stroke="currentColor" stroke-width="1" opacity=".25"/>
+      <path d="M60 14v10M60 96v10M14 60h10M96 60h10" stroke="currentColor" stroke-width="1" opacity=".35"/>
+      <path d="M48 42h24v8l-4 4v22l-6 4h-4l-6-4V54l-4-4z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    </svg>
+    <span class="mono">PRÉ-HISTÓRIA</span>
+    <span class="mono">BRASILEIRA</span>
+  </div>
+</section>
+
+<section class="ficha" aria-label="Ficha do trabalho">
+  <div class="ficha-intro">
+    <p class="section-num mono">00 · Ficha de campo</p>
+    <h2 class="ficha-title">Oito pesquisadores, um território imenso</h2>
+    <p class="ficha-lead">
+      Este projeto foi desenvolvido para a feira de ciências Porto FIC 2026 e
+      apresenta um panorama da arqueologia no Brasil: sua história, a ocupação
+      pré-histórica do território, os sambaquis, a arte rupestre, os métodos
+      científicos, as descobertas recentes na Amazônia, os principais sítios e a
+      preservação do patrimônio arqueológico.
+    </p>
+    <p class="ficha-resumo">
+      <strong>Resumo do trabalho.</strong>
+      O território brasileiro foi ocupado por sociedades diversas e complexas muito
+      antes da chegada dos europeus. Descobertas como os geoglifos do Acre, a terra
+      preta de índio, as pinturas da Serra da Capivara e os sambaquis do litoral
+      revelam sociedades organizadas, capazes de modificar a paisagem e de produzir
+      manifestações artísticas e tecnológicas sofisticadas.
+    </p>
+  </div>
+
+  <div class="ficha-equipe">
+    <p class="mono ficha-label">Equipe de pesquisa — Porto FIC 2026</p>
+    <ol class="ficha-members">
+      {% for m in project.members %}
+      <li>
+        <span class="mono ficha-idx">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+        <span>{{ m }}</span>
+      </li>
+      {% endfor %}
+    </ol>
+    <p class="ficha-source mono">Conteúdo e nomes conforme o documento original do trabalho.</p>
+  </div>
+</section>

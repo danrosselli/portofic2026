@@ -1,0 +1,89 @@
+<!-- ══════════════ 06 · MÉTODOS E TECNOLOGIAS ══════════════ -->
+<section class="section section--paper" id="metodos">
+  <div class="section-head">
+    <p class="section-num mono">06</p>
+    <h2 class="section-title">Métodos e tecnologias <em>arqueológicas</em></h2>
+    <p class="section-dek">
+      A arqueologia combina trabalho de campo, análise científica e tecnologias
+      modernas. A escavação é feita por camadas, cada descoberta é registrada com
+      local, profundidade e posição, e os materiais são catalogados antes de serem
+      estudados.
+    </p>
+  </div>
+
+  <div class="excavation reveal" data-excavation>
+    <div class="exc-left">
+      <div class="pit" aria-hidden="true">
+        {% for e in project.estratos %}
+        <div class="pit-layer" data-pit-layer="{{ loop.index0 }}" aria-label="{{ e.label }}" data-find="{{ e.find }}" data-note="{{ e.note }}">
+          <span class="mono pit-depth">{{ e.depth }}</span>
+          <span class="pit-artefact" aria-hidden="true">
+            <svg viewBox="0 0 64 64">{% include "icons/estrato-" ~ e.id ~ ".svg" %}</svg>
+          </span>
+          <span class="pit-find" aria-hidden="true">{{ e.find }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="exc-controls">
+        <button class="btn btn--primary btn--small" type="button" data-dig>Escavar próxima camada</button>
+        <button class="btn btn--ghost btn--small" type="button" data-reset>Reiniciar</button>
+      </div>
+      <p class="mono exc-hint" data-exc-hint>Aperte “Escavar” e observe como cada camada é retirada e registrada.</p>
+    </div>
+
+    <div class="exc-log" role="region" aria-label="Registro da escavação">
+      <p class="mono block-label">Caderno de registro da escavação</p>
+      <ol class="exc-entries" data-exc-entries></ol>
+      <p class="mono exc-empty" data-exc-empty>Nenhuma camada registrada ainda. O sítio aguarda a primeira pá.</p>
+    </div>
+  </div>
+
+  <div class="method-grid">
+    {% for m in project.metodos %}
+    <article class="method reveal">
+      <span class="mono method-idx">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+      <h3>{{ m.title }}</h3>
+      <p>{{ m.text }}</p>
+    </article>
+    {% endfor %}
+  </div>
+
+  <div class="scan3d reveal">
+    <div class="scan-copy">
+      <p class="mono block-label">Fotogrametria e escaneamento 3D</p>
+      <p>
+        A <strong>fotogrametria</strong> extrai medidas, dimensões e modelos
+        tridimensionais precisos de objetos, terrenos ou ambientes a partir de
+        fotografias. O <strong>escaneamento 3D</strong> cria cópias digitais muito
+        detalhadas, ajudando na preservação e no estudo — sem danificar o artefato.
+      </p>
+      <p class="mono note-inline">Abaixo, uma demonstração ilustrativa: deslize para transformar um render do objeto em sua malha de escaneamento.</p>
+    </div>
+    <div class="scan-figure" data-reveal-slider data-slider-min="0" data-slider-max="100">
+      <div class="scan-stack">
+        <svg class="scan-urn scan-urn--mesh" viewBox="0 0 260 320" aria-hidden="true">
+          <g fill="none" stroke="#8a3d1f" stroke-width="1.4" opacity=".85">
+            <path d="M88 60a42 42 0 0 1 84 0l8 96a58 58 0 0 1-100 0z"/>
+            <path d="M96 52l10 24M130 44v30M164 52l-10 24M104 120l52 12M100 160l60 14"/>
+            <path d="M92 236h76l-10 56h-56z"/>
+            <path d="M102 240l44 8M106 262l40 6"/>
+            <path d="M70 70h120M66 110h128M70 150h120"/>
+            <path d="M130 20v8"/>
+          </g>
+        </svg>
+        <svg class="scan-urn scan-urn--render reveal-top" viewBox="0 0 260 320" aria-hidden="true">
+          <path d="M88 60a42 42 0 0 1 84 0l8 96a58 58 0 0 1-100 0z" fill="#b0512a"/>
+          <path d="M92 236h76l-10 56h-56z" fill="#8a3d1f"/>
+          <path d="M104 44a30 30 0 0 1 52 0" fill="none" stroke="#e8c99a" stroke-width="6"/>
+          <path d="M98 108q32 12 64 0M96 156q34 12 68 0" fill="none" stroke="#e8c99a" stroke-width="5" stroke-linecap="round"/>
+          <path d="M108 252q22 6 44 0" fill="none" stroke="#e8c99a" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="scan-divider" aria-hidden="true"></div>
+      <input class="reveal-range" type="range" min="0" max="100" value="0" aria-label="Comparar render e malha 3D — arraste para revelar a malha">
+      <div class="scan-labels mono">
+        <span>Render ilustrativo</span><span>Malha 3D do escaneamento</span>
+      </div>
+    </div>
+  </div>
+</section>

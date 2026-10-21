@@ -1,0 +1,125 @@
+<!-- ══════════════ 03 · OCUPAÇÃO PRÉ-HISTÓRICA ══════════════ -->
+<section class="section section--paper section--routes" id="ocupacao">
+  <div class="section-head">
+    <p class="section-num mono">03</p>
+    <h2 class="section-title">A ocupação pré-histórica do <em>território brasileiro</em></h2>
+    <p class="section-dek">
+      Os primeiros habitantes do Brasil foram povos indígenas, conhecidos na
+      arqueologia como grupos paleoíndios. As evidências indicam que chegaram há
+      pelo menos 12.000 a 15.000 anos, embora algumas pesquisas apontem datas ainda
+      mais antigas em determinados sítios.
+    </p>
+  </div>
+
+  <div class="section-body">
+    <div class="routes-wrap reveal">
+      <figure class="routes-figure">
+        <svg class="routes-map" viewBox="0 0 1000 560" role="img" aria-label="Esquema das três rotas de povoamento das Américas descritas no trabalho">
+          <defs>
+            <pattern id="grain-routes" width="6" height="6" patternUnits="userSpaceOnUse">
+              <path d="M0 5l2 2M4 0l2 2" stroke="#b0512a" stroke-opacity=".12"/>
+            </pattern>
+          </defs>
+          <rect width="1000" height="560" fill="#efe3cf"/>
+          <rect width="1000" height="560" fill="url(#grain-routes)"/>
+
+          <!-- graticule -->
+          <g class="graticule" fill="none" stroke="#1c150f" stroke-opacity=".1" stroke-width="1">
+            <path d="M0 90q125 12 250 0t250 0 250 0 250 0"/>
+            <path d="M0 220q125 10 250 0t250 0 250 0 250 0"/>
+            <path d="M0 350q125 10 250 0t250 0 250 0 250 0"/>
+            <path d="M0 470q125 12 250 0t250 0 250 0 250 0"/>
+            <path d="M140 0v560M360 0v560M640 0v560M860 0v560"/>
+          </g>
+
+          <!-- oceanos -->
+          <text class="ocean mono" x="80" y="520">OCEANO PACÍFICO</text>
+          <text class="ocean mono" x="700" y="60">OCEANO ATLÂNTICO</text>
+          <text class="ocean mono" x="560" y="120" font-size="11">Mar de Bering</text>
+
+          <!-- Ásia / Sibéria -->
+          <path class="land" d="M640 40 C 760 28, 920 60, 995 70 L 998 150 C 950 170, 900 140, 860 150 C 830 160, 810 200, 780 210 C 750 222, 720 205, 700 220 C 685 232, 662 210, 648 190 C 638 175, 628 120, 640 40 Z"/>
+          <!-- Alasca -->
+          <path class="land" d="M430 62 C 470 50, 530 58, 545 78 C 552 95, 540 110, 520 120 C 500 130, 470 132, 455 118 C 442 106, 420 92, 430 62 Z"/>
+          <!-- América do Norte -->
+          <path class="land" d="M326 170 C 360 148, 420 150, 470 165 C 510 178, 540 200, 535 235 C 528 268, 500 295, 470 315 C 445 330, 420 325, 400 310 C 380 296, 340 230, 326 170 Z"/>
+          <!-- América Central -->
+          <path class="land" d="M432 320 C 448 310, 462 320, 466 340 C 470 362, 462 382, 450 390 C 438 382, 430 360, 432 320 Z"/>
+          <!-- América do Sul -->
+          <path class="land" d="M440 392 C 470 380, 520 392, 556 420 C 590 448, 598 500, 570 542 C 540 566, 490 560, 462 532 C 436 505, 428 440, 440 392 Z"/>
+          <!-- África -->
+          <path class="land" d="M780 300 C 830 290, 900 300, 962 330 C 990 348, 995 400, 978 448 C 960 495, 910 540, 858 556 C 820 552, 795 520, 788 480 C 782 440, 760 360, 780 300 Z"/>
+
+          <!-- Beringia (ponte de terra) -->
+          <path class="beringia" d="M545 100 C 580 88, 610 90, 640 96" fill="none" stroke="#8a3d1f" stroke-dasharray="6 4" stroke-width="2.5" opacity=".55"/>
+
+          <!-- rotas -->
+          <g class="routes-layer">
+            <path class="route route--aceita" data-route="bering" d="M652 150 C 600 128, 566 112, 542 108 C 505 112, 480 138, 462 172 C 440 216, 452 268, 472 308 C 492 348, 512 400, 528 452 C 538 486, 550 522, 556 540"/>
+            <path class="route route--alternativa" data-route="pacifico" d="M600 172 C 520 190, 452 226, 416 276 C 384 320, 378 372, 400 420 C 418 458, 440 500, 456 532"/>
+            <path class="route route--controversa" data-route="atlantico" d="M826 368 C 760 404, 690 452, 616 486 C 574 504, 540 508, 522 504"/>
+          </g>
+
+          <!-- rótulos dos continentes -->
+          <g class="land-labels mono" fill="#1c150f" opacity=".55">
+            <text x="700" y="95">Sibéria</text>
+            <text x="452" y="96">Alasca</text>
+            <text x="360" y="252">América</text>
+            <text x="368" y="268">do Norte</text>
+            <text x="468" y="480">América do Sul</text>
+            <text x="828" y="470">África</text>
+          </g>
+        </svg>
+        <figcaption class="mono figure-caption">
+          Esquema ilustrativo das rotas descritas no trabalho — sem escala.
+        </figcaption>
+      </figure>
+
+      <div class="routes-list">
+        {% for r in project.rotas %}
+        <article class="rota reveal" data-rota="{{ r.id }}">
+          <p class="mono rota-status rota-status--{{ r.status }}">
+            {% if r.status == "aceita" %}Hipótese mais aceita{% elif r.status == "alternativa" %}Hipótese alternativa{% else %}Hipótese controversa{% endif %}
+          </p>
+          <h3>{{ r.title }}</h3>
+          <p>{{ r.text }}</p>
+        </article>
+        {% endfor %}
+        <p class="routes-note mono">
+          No esquema acima: linha cheia = hipótese mais aceita · tracejada = hipótese
+          alternativa · pontilhada = hipótese mais controversa.
+        </p>
+      </div>
+    </div>
+
+    <div class="ocupacao-evidencias">
+      <h3 class="mono block-label">Evidências arqueológicas encontradas no território brasileiro</h3>
+      <ul class="evidencias-list">
+        {% for v in project.vestigios %}
+        <li><span class="mono ev-idx">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>{{ v.title }}</li>
+        {% endfor %}
+      </ul>
+      <div class="prose">
+        <p>
+          A ocupação ocorreu em diversas regiões: no litoral, destacam-se os
+          sambaquis; no interior, sítios como a Serra da Capivara e Lagoa Santa
+          mostram ocupações muito antigas; na Amazônia, o manejo da floresta, a terra
+          preta de índio e os geoglifos revelam sociedades complexas. Os grupos
+          pré-históricos apresentavam diferentes formas de organização, que variavam
+          conforme a região e o período.
+        </p>
+        <p>
+          Havia divisão de tarefas em muitos casos: a caça, a pesca, a abertura de
+          roçados e a defesa do grupo; o gerenciamento da agricultura, a colheita, o
+          preparo dos alimentos e a confecção de utensílios e cerâmicas. As moradias
+          podiam ser ocas ou malocas — grandes habitações coletivas de madeira, cipós
+          e folhas —, agrupadas em aldeias com praças centrais. Alguns grupos
+          praticavam agricultura de subsistência (mandioca e milho, por exemplo);
+          outros eram mais nômades ou seminomades, mudando de local quando os
+          recursos diminuíam. Muitos praticavam o xamanismo, enxergando elementos da
+          natureza, animais e sonhos como manifestações espirituais.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

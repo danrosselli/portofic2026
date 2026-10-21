@@ -1,0 +1,97 @@
+<!-- ══════════════ 09 · PRESERVAÇÃO ══════════════ -->
+<section class="section section--dark section--preservation" id="preservacao">
+  <div class="section-head">
+    <p class="section-num mono">09</p>
+    <h2 class="section-title">Preservação do patrimônio <em>arqueológico</em></h2>
+    <p class="section-dek">
+      O patrimônio arqueológico brasileiro é formado por milhares de sítios que
+      guardam vestígios da presença humana ao longo de milhares de anos. Sua
+      preservação é um dever do poder público e de toda a sociedade.
+    </p>
+  </div>
+
+  <div class="law-grid">
+    <article class="law-card reveal">
+      <p class="mono law-ref">Constituição Federal de 1988</p>
+      <h3>Artigos 20, 23 e 216</h3>
+      <p>
+        O artigo 216 reconhece os sítios arqueológicos como parte do patrimônio
+        cultural brasileiro; o artigo 20 declara que esses bens são da União; e o
+        artigo 23 estabelece que a proteção dos sítios é competência comum da União,
+        dos estados, do Distrito Federal e dos municípios.
+      </p>
+    </article>
+    <article class="law-card reveal">
+      <p class="mono law-ref">Lei nº 3.924 · 26 de julho de 1961</p>
+      <h3>A principal lei específica</h3>
+      <p>
+        Dispõe sobre os monumentos arqueológicos e pré-históricos: proíbe o
+        aproveitamento econômico, a destruição ou a mutilação de jazidas
+        arqueológicas antes que sejam devidamente pesquisadas, e determina que
+        qualquer pesquisa ou escavação precisa de autorização do IPHAN.
+      </p>
+    </article>
+    <article class="law-card reveal">
+      <p class="mono law-ref">Órgão federal</p>
+      <h3>IPHAN</h3>
+      <p>
+        Instituto do Patrimônio Histórico e Artístico Nacional: responsável pela
+        gestão e proteção do patrimônio arqueológico — cadastro de sítios,
+        autorização de pesquisas, fiscalização e promoção de ações de preservação.
+      </p>
+    </article>
+    <article class="law-card reveal">
+      <p class="mono law-ref">Registro atual</p>
+      <h3>SICG — Sistema Integrado de Conhecimento e Gestão</h3>
+      <p>
+        Atualmente, o registro dos sítios é feito por meio do SICG, que substituiu o
+        antigo Cadastro Nacional de Sítios Arqueológicos.
+      </p>
+    </article>
+  </div>
+
+  <div class="threats">
+    <p class="mono block-label">Ameaças ao patrimônio arqueológico</p>
+    <ul class="threats-list">
+      {% for t in project.ameacas %}
+      <li class="threat reveal">
+        <span class="mono threat-idx">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+        <div>
+          <h3>{{ t.title }}</h3>
+          <p>{{ t.text }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="mono threats-note">
+      Muitos sítios são destruídos antes mesmo de serem estudados — uma perda
+      irreversível de informações sobre o passado.
+    </p>
+  </div>
+
+  <div class="pres-social prose">
+    <p>
+      A preservação não depende apenas de leis e fiscalização: é fundamental que a
+      população conheça e valorize o patrimônio. A <strong>educação patrimonial</strong>,
+      realizada em escolas, museus e projetos comunitários, ajuda a formar cidadãos
+      conscientes. Além disso, a <strong>colaboração com povos indígenas e comunidades
+      tradicionais</strong> tem se mostrado cada vez mais relevante: muitos grupos
+      reconhecem sítios arqueológicos como parte de sua história e de seu território,
+      e sua participação nas pesquisas e na gestão contribui para uma preservação
+      mais justa e eficaz.
+    </p>
+    <p>
+      O Parque Nacional da Serra da Capivara é um dos melhores exemplos de proteção
+      integrada: criado em 1979 e reconhecido pela UNESCO como Patrimônio Mundial em
+      1991, combina conservação da natureza, pesquisa científica e educação
+      patrimonial. Outros casos importantes incluem o Cais do Valongo, no Rio de
+      Janeiro (Patrimônio Mundial da UNESCO), e diversos sítios de sambaquis
+      protegidos no litoral sul e sudeste.
+    </p>
+  </div>
+
+  <div class="pres-statement">
+    <p class="mono">Encerramento</p>
+    <h2>Preservar vestígios arqueológicos é preservar possibilidades de conhecer a história.</h2>
+  </div>
+</section>

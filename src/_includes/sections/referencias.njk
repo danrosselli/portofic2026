@@ -1,0 +1,23 @@
+<!-- ══════════════ 11 · REFERÊNCIAS ══════════════ -->
+<section class="section section--paper section--references" id="referencias">
+  <div class="section-head">
+    <p class="section-num mono">11</p>
+    <h2 class="section-title">Referências <em>bibliográficas</em></h2>
+  </div>
+  <details class="refs-details">
+    <summary class="mono refs-summary">
+      Abrir a lista completa de referências do trabalho original <span aria-hidden="true">+</span>
+    </summary>
+    <ol class="refs-list">
+      {% for r in project.referencias %}
+      <li>
+        <p>{{ r.text }} <a href="{{ r.url }}" target="_blank" rel="noopener noreferrer">{{ r.url }}</a> {{ r.access }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </details>
+  <p class="mono refs-note">
+    Autores, instituições, títulos, URLs e datas de acesso preservados conforme o
+    documento original (19 páginas).
+  </p>
+</section>

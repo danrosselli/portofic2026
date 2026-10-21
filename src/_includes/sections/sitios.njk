@@ -1,0 +1,70 @@
+<!-- ══════════════ 08 · PRINCIPAIS SÍTIOS ══════════════ -->
+<section class="section section--paper" id="sitios">
+  <div class="section-head">
+    <p class="section-num mono">08</p>
+    <h2 class="section-title">Principais sítios <em>arqueológicos</em> do Brasil</h2>
+    <p class="section-dek">
+      Um mapa interativo com os locais descritos no trabalho. As posições dos
+      marcadores são aproximadas — indicam regiões, não coordenadas exatas de
+      escavação.
+    </p>
+  </div>
+
+  <div class="sites-map-wrap" data-sites-map>
+    <div class="map-panel">
+      <svg class="brasil-map" viewBox="0 0 760 780" role="img" aria-labelledby="brasil-map-title">
+        <title id="brasil-map-title">Mapa do Brasil com os principais sítios arqueológicos citados no trabalho</title>
+        <g class="map-states">{% include "map-states.njk" %}</g>
+        <g class="map-markers" aria-hidden="true">
+          {% for s in project.sitios %}
+          <g class="map-marker" data-site-marker="{{ s.id }}" transform="translate({{ s.x }} {{ s.y }})">
+            <circle class="marker-halo" r="16"/>
+            <circle class="marker-dot" r="6"/>
+          </g>
+          {% endfor %}
+        </g>
+      </svg>
+      <p class="mono figure-caption">Marcadores indicam localização aproximada (região/município), conforme o documento.</p>
+    </div>
+
+    <div class="sites-side">
+      <p class="mono block-label">Selecione um sítio</p>
+      <ul class="sites-list">
+        {% for s in project.sitios %}
+        <li>
+          <button class="site-item mono{{ ' is-active' if loop.first else '' }}" type="button" data-site-tab="{{ s.id }}" aria-controls="site-panel-{{ s.id }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">
+            <span class="site-name">{{ s.name }}</span>
+            <span class="site-state">{{ s.state }}</span>
+          </button>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="site-panels">
+      {% for s in project.sitios %}
+      <article class="site-panel{{ ' is-active' if loop.first else '' }}" id="site-panel-{{ s.id }}" data-site-panel="{{ s.id }}">
+        <div class="site-visual" aria-hidden="true">
+          <img src="{{ ('/img/vignette-' ~ s.kind ~ '.svg') | url }}" alt="" loading="lazy">
+        </div>
+        <div class="site-copy">
+          <p class="mono site-approx">{{ s.state }}{% if s.approx %} · posição aproximada{% endif %}</p>
+          <h3>{{ s.name }}</h3>
+          <p>{{ s.text }}</p>
+          <p class="site-importance"><strong>Importância:</strong> {{ s.importance }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="prose sites-close">
+    <p>
+      Além dos locais destacados, existem muitos outros sítios espalhados pelo
+      Brasil, como o Parque Nacional de Sete Cidades, no Piauí, e diversos sítios de
+      terra preta e geoglifos na Amazônia. O cadastro oficial mantido pelo IPHAN
+      registra milhares de sítios em todo o território nacional, refletindo a
+      riqueza e a diversidade do patrimônio arqueológico brasileiro.
+    </p>
+  </div>
+</section>

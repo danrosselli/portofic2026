@@ -1,0 +1,48 @@
+<!-- ══════════════ 01 · O QUE É ARQUEOLOGIA ══════════════ -->
+<section class="section section--paper" id="oque-e">
+  <div class="section-head">
+    <p class="section-num mono">01</p>
+    <h2 class="section-title">O que é <em>arqueologia</em>?</h2>
+    <p class="section-dek">
+      A arqueologia é a ciência que estuda os povos do passado por meio dos
+      vestígios materiais que eles deixaram: ferramentas, cerâmicas, pinturas,
+      construções, restos de alimentos e sepultamentos.
+    </p>
+  </div>
+
+  <div class="section-body section-body--split">
+    <div class="prose">
+      <p>
+        No Brasil, essa ciência tem revelado uma história humana muito mais antiga,
+        complexa e diversificada do que se imaginava até poucas décadas atrás.
+        Durante muito tempo, a visão predominante sobre o passado brasileiro
+        priorizava os registros escritos a partir da chegada dos europeus. As
+        pesquisas arqueológicas das últimas décadas, porém, demonstraram que o
+        território brasileiro foi ocupado por diferentes grupos humanos ao longo de
+        milhares de anos, muito antes de 1500.
+      </p>
+      <p>
+        Sítios como a Serra da Capivara, os sambaquis do litoral, os geoglifos da
+        Amazônia e as cavernas de Lagoa Santa são exemplos de como essas populações
+        organizaram espaços, desenvolveram tecnologias, produziram arte e
+        modificaram a paisagem.
+      </p>
+      <blockquote class="pullquote">
+        <p>“Objetos e vestígios ajudam a contar uma parte da história brasileira que não aparece nos livros ou em documentos escritos.”</p>
+        <cite class="mono">— trabalho original, seção 3.1</cite>
+      </blockquote>
+    </div>
+
+    <div class="vestigios-grid">
+      {% for v in project.vestigios %}
+      <div class="vestigio reveal">
+        <svg class="vestigio-icon" viewBox="0 0 64 64" aria-hidden="true">
+          {% include "icons/" ~ v.icon ~ ".svg" %}
+        </svg>
+        <h3>{{ v.title }}</h3>
+        <p>{{ v.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

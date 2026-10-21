@@ -25,12 +25,13 @@ bun run build        # gera o site estático em _site/
 src/
 ├── _data/            # dados globais (site.json, project.json)
 ├── _includes/        # layout.njk, mapas e ícones SVG
-│   ├── icons/        # ícones dos vestígios materiais
+│   ├── icons/        # ícones dos vestígios e das camadas de escavação
+│   ├── sections/     # uma parcial por seção (hero, historia, sambaquis, …)
 │   └── map-states.njk# divisas estaduais do Brasil (SVG gerado)
 ├── css/              # sistema de design (style.css)
-├── img/              # ilustrações SVG (herói, galeria, vinhetas)
+├── img/              # fotos de acervo aberto e ilustrações SVG
 ├── js/               # interações (main.js)
-└── index.njk         # página única com todas as seções
+└── index.njk         # shell que monta as seções via include
 eleventy.config.js    # Eleventy + pathPrefix /portofic2026/
 ```
 
