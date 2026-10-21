@@ -516,30 +516,36 @@ description: "Expedição digital pelo passado brasileiro: história da arqueolo
 
   <div class="gallery" data-gallery>
     {% set arts = [
-      { id: "maos", title: "Mãos e contornos", text: "Contornos de mãos, possivelmente produzidos pela técnica de sopro sobre pigmento. Ilustração inspirada em motivos rupestres brasileiros.", src: "/img/arte-maos.svg" },
-      { id: "geometrica", title: "Figuras geométricas", text: "Círculos, linhas, retângulos e zigue-zagues — motivos geométricos como os descritos no Sítio Pedra Pintada, em Roraima. Ilustração inspirada em motivos rupestres.", src: "/img/arte-geometrica.svg" },
-      { id: "caca", title: "Cenas de caça e figuras humanas", text: "Figuras humanas estilizadas e cenas de caça, comuns nos conjuntos de pinturas do interior do Nordeste. Ilustração inspirada em motivos rupestres.", src: "/img/arte-caca.svg" },
-      { id: "gravura", title: "Gravuras na rocha", text: "Traços incisos e riscos marcados na superfície da rocha — a técnica da gravura rupestre. Ilustração inspirada em motivos rupestres brasileiros.", src: "/img/arte-gravura.svg" }
+      { id: "capivara", title: "Serra da Capivara — painel de pinturas", text: "Pinturas rupestres em parede rochosa no Parque Nacional da Serra da Capivara (Piauí), um dos maiores conjuntos de arte rupestre do país. Fotografia de acervo aberto.", src: "/img/rockart-capivara.jpg", credit: "Foto: Vitor 1234 · Wikimedia Commons · CC BY-SA 3.0", srcUrl: "https://commons.wikimedia.org/wiki/File:Serra_da_Capivara_-_Several_Paintings_1.jpg" },
+      { id: "catimbau", title: "Vale do Catimbau — pinturas em abrigo", text: "Pinturas rupestres no Parque Nacional do Catimbau (Pernambuco), citado no trabalho entre os principais sítios de arte rupestre. Fotografia de acervo aberto.", src: "/img/rockart-catimbau.jpg", credit: "Foto: correiarodrigo · Wikimedia Commons · CC BY-SA 2.0", srcUrl: "https://commons.wikimedia.org/wiki/File:Pinturas_Rupestres_-_Vale_do_Catimbau_-_Pernambuco_-_Brasil.jpg" },
+      { id: "lapa-santo", title: "Lagoa Santa — figura antropomórfica", text: "Registro documental de pintura rupestre antropomórfica na Lapa do Santo, região de Lagoa Santa (Minas Gerais), com representação esquemática ao lado. Fotografia de acervo aberto, documentação científica.", src: "/img/rockart-lapa-santo.png", credit: "Foto: W. A. Neves et al. · Wikimedia Commons · CC BY-SA 4.0", srcUrl: "https://commons.wikimedia.org/wiki/File:Lapa_do_Santo_-_Rock_art_-_C-shaped_head_anthropomorph_Picture_and_schematic_representation.png" },
+      { id: "soledade", title: "Lajedo de Soledade — desenho de arara", text: "Desenho rupestre de uma arara no Lajedo de Soledade (Apodi, Rio Grande do Norte), entre os sítios de arte rupestre citados no trabalho. Fotografia de acervo aberto.", src: "/img/rockart-soledade.jpg", credit: "Foto: Fabiobarros · Wikimedia Commons · CC BY-SA 4.0", srcUrl: "https://commons.wikimedia.org/wiki/File:Desenho_da_arara_-_lajedo_de_soledade_-_apodi.jpg" }
     ] %}
     {% for a in arts %}
     <figure class="art-card reveal">
-      <button class="art-open" type="button" data-art-open data-art-title="{{ a.title }}" data-art-text="{{ a.text }}" aria-haspopup="dialog">
-        <img src="{{ a.src | url }}" alt="{{ a.title }} — ilustração inspirada em motivos rupestres brasileiros" loading="lazy">
+      <button class="art-open" type="button" data-art-open data-art-title="{{ a.title }}" data-art-text="{{ a.text }} {{ a.credit }}. Fonte: {{ a.srcUrl }}" aria-haspopup="dialog">
+        <img src="{{ a.src | url }}" alt="{{ a.title }} — fotografia de arte rupestre brasileira" loading="lazy">
         <span class="art-zoom mono" aria-hidden="true">ampliar ⊕</span>
       </button>
       <figcaption>
-        <span class="mono art-tag">Ilustração</span>
+        <span class="mono art-tag">Fotografia · Wikimedia Commons</span>
         <h3>{{ a.title }}</h3>
         <p>{{ a.text }}</p>
+        <p class="mono art-credit">{{ a.credit }} · <a href="{{ a.srcUrl }}" target="_blank" rel="noopener noreferrer">fonte</a></p>
       </figcaption>
     </figure>
     {% endfor %}
   </div>
+  <p class="mono gallery-credit-note">
+    Fotografias de acervo aberto do Wikimedia Commons (licenças CC BY-SA 2.0 / 3.0 /
+    4.0), armazenadas localmente neste site, com os créditos indicados em cada
+    legenda. Os significados das representações permanecem em aberto.
+  </p>
 
   <dialog class="art-dialog" data-art-dialog aria-labelledby="art-dialog-title">
     <button class="art-close mono" type="button" data-art-close aria-label="Fechar">fechar ×</button>
     <img class="art-dialog-img" data-art-dialog-img alt="">
-    <p class="mono art-dialog-tag">Ilustração artística</p>
+    <p class="mono art-dialog-tag">Fotografia · acervo aberto</p>
     <h3 id="art-dialog-title" data-art-dialog-title></h3>
     <p data-art-dialog-text></p>
   </dialog>

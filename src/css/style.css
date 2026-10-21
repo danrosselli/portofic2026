@@ -1487,6 +1487,29 @@ section[id] {
   line-height: 1.55;
 }
 
+.art-credit {
+  margin-top: 0.6rem !important;
+  color: var(--terra-soft) !important;
+  font-size: 0.62rem !important;
+  text-transform: none;
+  letter-spacing: 0.03em;
+  line-height: 1.6 !important;
+}
+
+.art-credit a {
+  color: var(--terra-soft);
+}
+
+.gallery-credit-note {
+  margin-top: 1.2rem;
+  color: var(--on-dark-soft);
+  font-size: 0.68rem;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+  max-width: 58rem;
+}
+
 /* lightbox */
 .art-dialog {
   border: 1px solid rgba(245, 236, 221, 0.25);

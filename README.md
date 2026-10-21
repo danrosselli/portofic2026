@@ -45,6 +45,8 @@ executa o build e publica o site no GitHub Pages automaticamente
 ## Conteúdo
 
 Todo o conteúdo acadêmico (nomes, datas, sítios, legislação e referências) é
-preservado conforme o documento original do trabalho. Ilustrações visuais foram
-criadas para o site e são identificadas como ilustrações; não substituem nem
-representam fotos reais de achados arqueológicos.
+preservado conforme o documento original do trabalho. As fotografias da galeria
+de arte rupestre vêm do acervo aberto do Wikimedia Commons (licenças CC BY-SA),
+armazenadas localmente no repositório com os créditos indicados em cada legenda;
+as demais composições visuais (herói, mapas, cortes e vinhetas) são ilustrações
+SVG criadas para o site e identificadas como tais.
