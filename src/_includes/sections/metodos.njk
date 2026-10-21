@@ -61,23 +61,24 @@
     </div>
     <div class="scan-figure" data-reveal-slider data-slider-min="0" data-slider-max="100">
       <div class="scan-stack">
-        <svg class="scan-urn scan-urn--mesh" viewBox="0 0 260 320" aria-hidden="true">
-          <g fill="none" stroke="#8a3d1f" stroke-width="1.4" opacity=".85">
-            <path d="M88 60a42 42 0 0 1 84 0l8 96a58 58 0 0 1-100 0z"/>
-            <path d="M96 52l10 24M130 44v30M164 52l-10 24M104 120l52 12M100 160l60 14"/>
-            <path d="M92 236h76l-10 56h-56z"/>
-            <path d="M102 240l44 8M106 262l40 6"/>
-            <path d="M70 70h120M66 110h128M70 150h120"/>
-            <path d="M130 20v8"/>
-          </g>
-        </svg>
-        <svg class="scan-urn scan-urn--render reveal-top" viewBox="0 0 260 320" aria-hidden="true">
-          <path d="M88 60a42 42 0 0 1 84 0l8 96a58 58 0 0 1-100 0z" fill="#b0512a"/>
-          <path d="M92 236h76l-10 56h-56z" fill="#8a3d1f"/>
-          <path d="M104 44a30 30 0 0 1 52 0" fill="none" stroke="#e8c99a" stroke-width="6"/>
-          <path d="M98 108q32 12 64 0M96 156q34 12 68 0" fill="none" stroke="#e8c99a" stroke-width="5" stroke-linecap="round"/>
-          <path d="M108 252q22 6 44 0" fill="none" stroke="#e8c99a" stroke-width="4"/>
-        </svg>
+        <!-- malha de escaneamento (fundo) -->
+        <img
+          class="scan-urn scan-urn--mesh"
+          src="{{ '/img/scan-mesh.jpg' | url }}"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        >
+        <!-- render do objeto (camada superior, revelada pelo slider) -->
+        <img
+          class="scan-urn scan-urn--render reveal-top"
+          src="{{ '/img/scan-render.jpg' | url }}"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        >
       </div>
       <div class="scan-divider" aria-hidden="true"></div>
       <input class="reveal-range" type="range" min="0" max="100" value="0" aria-label="Comparar render e malha 3D — arraste para revelar a malha">
