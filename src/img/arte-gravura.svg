@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8f6a3a"/><stop offset=".5" stop-color="#7c5a30"/><stop offset="1" stop-color="#61482a"/>
+    </linearGradient>
+    <pattern id="grain" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M0 12q6-3 12 0t12 0" fill="none" stroke="#544028" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="1000" fill="url(#rock)"/>
+  <rect width="800" height="1000" fill="url(#grain)" opacity=".45"/>
+
+  <g stroke="#2a1f14" stroke-linecap="round">
+    <!-- sulcos incisos paralelos -->
+    <g stroke-width="7" opacity=".8">
+      <path d="M140 210l520 60"/>
+      <path d="M150 260l500 58"/>
+      <path d="M160 310l480 56"/>
+      <path d="M170 360l460 54"/>
+    </g>
+    <!-- zigue-zague gravado -->
+    <path d="M140 520l46-40 46 40 46-40 46 40 46-40 46 40 46-40 46 40 46-40 46 40" stroke-width="6" opacity=".75"/>
+    <!-- cúpulas (cavidades) -->
+    <g fill="#2a1f14" opacity=".55">
+      <circle cx="200" cy="700" r="14"/><circle cx="280" cy="670" r="11"/><circle cx="360" cy="720" r="13"/>
+      <circle cx="440" cy="680" r="10"/><circle cx="520" cy="730" r="14"/><circle cx="610" cy="690" r="11"/>
+    </g>
+    <!-- hachuras -->
+    <g stroke-width="5" opacity=".7">
+      <path d="M180 800l60 44M240 790l50 40M300 780l46 36"/>
+      <path d="M540 830l-60-44M480 820l-50-40M420 810l-46-36"/>
+    </g>
+    <path d="M120 170v14M680 160v14" stroke-width="4" opacity=".6"/>
+  </g>
+  <!-- sombra da reentrância -->
+  <path d="M120 90h560l-20 26H140z" fill="#544028" opacity=".5"/>
+</svg>

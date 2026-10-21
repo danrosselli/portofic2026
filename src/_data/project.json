@@ -1,0 +1,290 @@
+{
+  "title": "Arqueologia no Brasil",
+  "subtitle": "Archaeology in Brazil",
+  "school": "Colégio Porto Alvorada",
+  "fair": "Porto FIC 2026",
+  "place": "Jaú — SP",
+  "year": "2026",
+  "members": [
+    "Bento Molina Castelo",
+    "Bruno Miguel da Silva Santos",
+    "Felipe Ávila",
+    "Felipe de Lima Gregori Tirollo",
+    "Felipe Rodrigues Rosselli",
+    "João Felipe Canal Sparapan",
+    "Miguel Del Bianco da Silva",
+    "Vinícius Artigoso Franco"
+  ],
+  "sections": [
+    { "id": "inicio", "num": "00", "label": "Abertura" },
+    { "id": "oque-e", "num": "01", "label": "O que é arqueologia?" },
+    { "id": "historia", "num": "02", "label": "História da arqueologia no Brasil" },
+    { "id": "ocupacao", "num": "03", "label": "Ocupação pré-histórica" },
+    { "id": "sambaquis", "num": "04", "label": "Sambaquis e povos litorâneos" },
+    { "id": "arte-rupestre", "num": "05", "label": "Arte rupestre" },
+    { "id": "metodos", "num": "06", "label": "Métodos e tecnologias" },
+    { "id": "amazonia", "num": "07", "label": "Descobertas na Amazônia" },
+    { "id": "sitios", "num": "08", "label": "Principais sítios" },
+    { "id": "preservacao", "num": "09", "label": "Preservação" },
+    { "id": "conclusao", "num": "10", "label": "Conclusão" },
+    { "id": "referencias", "num": "11", "label": "Referências" }
+  ],
+  "vestigios": [
+    {
+      "icon": "litico",
+      "title": "Artefatos líticos",
+      "text": "Ferramentas de pedra lascada ou polida usadas para caça, corte e outras atividades."
+    },
+    {
+      "icon": "ceramica",
+      "title": "Cerâmicas e urnas funerárias",
+      "text": "Potes de barro decorados ou utilizados para guardar restos mortais."
+    },
+    {
+      "icon": "fossil",
+      "title": "Fósseis e restos humanos",
+      "text": "Ossos, dentes e crânios que ajudam a compreender a evolução, a saúde e o aspecto físico das antigas populações — como o famoso crânio de Luzia."
+    },
+    {
+      "icon": "estrutura",
+      "title": "Estruturas construídas",
+      "text": "Vestígios de habitações, túmulos e outras construções."
+    },
+    {
+      "icon": "organico",
+      "title": "Vestígios orgânicos",
+      "text": "Sementes, restos de fogueiras (carvão vegetal) e ossos de animais, que indicam dieta e condições climáticas da época."
+    },
+    {
+      "icon": "rupestre",
+      "title": "Pinturas rupestres e sambaquis",
+      "text": "Sítios com pinturas, como o Parque Nacional da Serra da Capivara, no Piauí, e sambaquis ao longo do litoral."
+    }
+  ],
+  "timeline": [
+    {
+      "id": "colonial",
+      "marker": "Séc. XVI–XIX",
+      "title": "Primeiros estudos e coleta de vestígios",
+      "text": "Os primeiros estudos arqueológicos começaram ainda no período colonial, quando pesquisadores e viajantes encontravam objetos indígenas, pinturas rupestres e outros vestígios antigos. No início, as pesquisas eram feitas de maneira bastante simples: exploravam-se cavernas, rios e sítios, e os objetos eram recolhidos para estudá-los. Muitas vezes, esses materiais eram levados para museus e coleções."
+    },
+    {
+      "id": "lund",
+      "marker": "Séc. XIX",
+      "title": "Peter Wilhelm Lund",
+      "text": "Naturalista dinamarquês que estudou fósseis e vestígios humanos em cavernas de Minas Gerais, na região de Lagoa Santa. O IPHAN o considera o “Pai da Arqueologia” no Brasil. Lund pesquisou cavernas da região e encontrou restos humanos e de animais extintos."
+    },
+    {
+      "id": "cientifico",
+      "marker": "Séc. XX",
+      "title": "A transição para métodos científicos",
+      "text": "Com o passar do tempo, a arqueologia se tornou mais organizada e passou a utilizar métodos científicos, como escavações cuidadosas, análise de materiais e técnicas para descobrir a idade dos vestígios. A arqueologia brasileira evoluiu muito durante o século XX e continua avançando até hoje."
+    },
+    {
+      "id": "paulo",
+      "marker": "Séc. XX",
+      "title": "Paulo Duarte",
+      "text": "Importante defensor da preservação do patrimônio arqueológico brasileiro, destacou-se entre os pesquisadores que contribuíram para a arqueologia do país."
+    },
+    {
+      "id": "capivara",
+      "marker": "1979",
+      "title": "Serra da Capivara e Niède Guidon",
+      "text": "Niède Guidon se destacou pelos estudos realizados na região da Serra da Capivara (Piauí). O Parque Nacional da Serra da Capivara foi criado em 1979 para proteger os vestígios da região, que possui uma das maiores concentrações de sítios arqueológicos pré-coloniais das Américas, com milhares de pinturas e gravuras rupestres."
+    },
+    {
+      "id": "luzia",
+      "marker": "≈ 11.500 anos",
+      "title": "Luzia",
+      "text": "Um dos esqueletos humanos mais antigos já encontrados no Brasil, descoberto em Minas Gerais, na Lapa Vermelha IV, com aproximadamente 11,5 mil anos de idade."
+    },
+    {
+      "id": "unesco",
+      "marker": "1991",
+      "title": "Patrimônio Mundial da UNESCO",
+      "text": "O conjunto arqueológico da Serra da Capivara, de grande importância internacional, foi inscrito pela UNESCO na Lista do Patrimônio Mundial."
+    },
+    {
+      "id": "hoje",
+      "marker": "Hoje",
+      "title": "Tecnologia e interdisciplinaridade",
+      "text": "Atualmente, os arqueólogos utilizam equipamentos modernos e trabalham junto com especialistas de outras áreas para estudar os vestígios encontrados. Escavações e pesquisas também ajudam a preservar lugares importantes para a história e a cultura do país."
+    }
+  ],
+  "rotas": [
+    {
+      "id": "bering",
+      "status": "aceita",
+      "title": "Estreito de Bering e a ponte terrestre de Beringia",
+      "text": "É a hipótese mais aceita pelos cientistas. Um canal marítimo entre o Alasca e a Sibéria; durante a última Era do Gelo, o nível do mar estava mais baixo e uma faixa de terra ligava as duas regiões — Beringia. Estudos indicam que, há aproximadamente 15 mil anos (ou um pouco mais), grupos humanos da Ásia teriam cruzado essa ponte e entrado nas Américas."
+    },
+    {
+      "id": "pacifico",
+      "status": "alternativa",
+      "title": "Rota do Pacífico",
+      "text": "Sugere que as primeiras populações humanas chegaram às Américas navegando ao longo da costa do oceano Pacífico. Evidências arqueológicas em sítios costeiros indicam ocupação humana que pode remontar a mais de 20.000 anos em algumas regiões."
+    },
+    {
+      "id": "atlantico",
+      "status": "controversa",
+      "title": "Rota do Atlântico",
+      "text": "É a hipótese mais controversa: propõe que populações humanas teriam chegado por vias marítimas através do Oceano Atlântico, com possíveis conexões entre grupos africanos e americanos datadas de cerca de 15.000 anos atrás. Embora menos aceita, continua sendo debatida por alguns pesquisadores."
+    }
+  ],
+  "camadasSambaqui": [
+    {
+      "id": "topo",
+      "label": "Topo — moradias",
+      "title": "Moradias no topo do sambaqui",
+      "text": "As moradias eram construídas diretamente no topo dos próprios sambaquis ou nas áreas planas ao redor: cabanas simples feitas com materiais vegetais perecíveis, projetadas para aproveitar a elevação natural contra as marés e o vento."
+    },
+    {
+      "id": "conchas-superiores",
+      "label": "Camadas de conchas",
+      "title": "Camadas sucessivas de conchas",
+      "text": "Camadas sucessivas de novas conchas aumentavam o tamanho do monumento ao longo de gerações. Os sambaquis são amontoados de conchas, restos de peixes, restos de fogueiras, pedras e terra."
+    },
+    {
+      "id": "sepultamentos",
+      "label": "Sepultamentos",
+      "title": "Rituais coletivos de sepultamento",
+      "text": "O sepultamento era um ritual coletivo e elaborado. Os corpos eram depositados em covas rasas dentro dos montes de conchas, muitas vezes acompanhados de banquetes comunitários, fogueiras e oferendas de artefatos. Os sambaquis serviam como locais de moradia, áreas de rituais e cemitérios."
+    },
+    {
+      "id": "restos",
+      "label": "Restos de alimentos",
+      "title": "Conchas, peixes e fogueiras",
+      "text": "Os sambaquis são formados por conchas e restos de peixes, restos de fogueiras, pedras e terra — vestígios da fartura de peixes e moluscos dos ecossistemas costeiros que sustentava essas comunidades sedentárias."
+    },
+    {
+      "id": "base",
+      "label": "Base — solo e areia",
+      "title": "A base sobre a paisagem costeira",
+      "text": "Construídos ao longo da costa do Brasil e em algumas margens de rios, entre cerca de 8.000 e 2.000 anos atrás, principalmente no litoral banhado pela Mata Atlântica, em estados como Rio de Janeiro, São Paulo e Santa Catarina."
+    }
+  ],
+  "metodos": [
+    { "id": "escavacao", "title": "Escavações arqueológicas", "text": "Os arqueólogos retiram cuidadosamente as camadas de terra para encontrar objetos, ossos, ferramentas, cerâmicas e outros vestígios." },
+    { "id": "registro", "title": "Registro de localização e profundidade", "text": "Durante a escavação, cada descoberta é registrada, com informações sobre o local, a profundidade e a posição em que foi encontrada." },
+    { "id": "catalogacao", "title": "Catalogação dos materiais", "text": "Depois, os materiais passam por um processo de catalogação, no qual são identificados, organizados e estudados." },
+    { "id": "carbono", "title": "Datação por Carbono-14", "text": "Utilizada para descobrir aproximadamente a idade de materiais que possuem restos de organismos vivos, como ossos e madeira." },
+    { "id": "fotogrametria", "title": "Fotogrametria", "text": "Ciência e tecnologia que extrai medidas, dimensões e modelos tridimensionais precisos de objetos, terrenos ou ambientes a partir de fotografias e imagens digitais." },
+    { "id": "drones", "title": "Drones", "text": "Ajudam a observar grandes áreas de cima, podendo localizar estruturas e vestígios que seriam difíceis de perceber do solo." },
+    { "id": "geo", "title": "Geoprocessamento", "text": "Utiliza mapas e computadores para analisar a localização dos sítios arqueológicos e relacioná-los com informações sobre o terreno." },
+    { "id": "scan3d", "title": "Escaneamento 3D", "text": "Permite criar cópias digitais muito detalhadas de objetos, construções e outros vestígios, ajudando na preservação e no estudo." },
+    { "id": "ia", "title": "Inteligência artificial", "text": "Começa a ser utilizada na arqueologia: ajuda a analisar grandes quantidades de informações, identificar padrões em imagens e auxiliar na localização de possíveis sítios arqueológicos." }
+  ],
+  "estratos": [
+    { "depth": "0–20 cm", "label": "Camada A — solo vegetal", "find": "Carvão de fogueira e fragmentos de cerâmica", "note": "Cada achado é registrado com local, profundidade e posição." },
+    { "depth": "20–45 cm", "label": "Camada B — conchas e cinzas", "find": "Conchas de moluscos e restos de peixes", "note": "A composição das camadas revela a dieta e o uso do espaço." },
+    { "depth": "45–70 cm", "label": "Camada C — sepultamento", "find": "Sepultamento com oferendas", "note": "A posição do corpo e os objetos acompanham rituais coletivos." },
+    { "depth": "70–100 cm", "label": "Camada D — base antiga", "find": "Instrumentos de pedra lascada", "note": "Materiais mais profundos, em geral, correspondem a ocupações mais antigas." }
+  ],
+  "sitios": [
+    {
+      "id": "capivara",
+      "x": 600.7, "y": 286,
+      "name": "Parque Nacional da Serra da Capivara",
+      "state": "Piauí",
+      "kind": "rupestre",
+      "approx": true,
+      "text": "Localizado no sudeste do Piauí, foi criado em 1979 para proteger vestígios arqueológicos e possui uma das maiores concentrações de sítios pré-coloniais das Américas, com centenas de locais de pinturas e gravuras. Destaca-se o Boqueirão da Pedra Furada. Inscrito pela UNESCO na Lista do Patrimônio Mundial em 1991.",
+      "importance": "Um dos maiores conjuntos de arte rupestre do mundo e referência internacional da arqueologia brasileira."
+    },
+    {
+      "id": "sete-cidades",
+      "x": 614.8, "y": 289.8,
+      "name": "Parque Nacional de Sete Cidades",
+      "state": "Piauí",
+      "kind": "rupestre",
+      "approx": true,
+      "text": "Citado no trabalho entre os muitos sítios arqueológicos espalhados pelo Brasil, no mesmo corredor de sítios do sudeste do Piauí.",
+      "importance": "Amplia o conjunto de áreas protegidas com vestígios pré-coloniais no Piauí."
+    },
+    {
+      "id": "lagoa-santa",
+      "x": 575.2, "y": 480.4,
+      "name": "Lagoa Santa",
+      "state": "Minas Gerais",
+      "kind": "caverna",
+      "approx": true,
+      "text": "Região com história de estudos desde o século XIX, pesquisada por Peter Wilhelm Lund. Na Lapa Vermelha IV foi encontrado o esqueleto de Luzia, com aproximadamente 11.500 anos. A Lapa da Cerca Grande, em Matozinhos, apresenta vestígios e pinturas rupestres.",
+      "importance": "Berço da arqueologia brasileira e local de um dos esqueletos mais antigos do país."
+    },
+    {
+      "id": "pedra-pintada",
+      "x": 238.2, "y": 81.2,
+      "name": "Pedra Pintada",
+      "state": "Roraima",
+      "kind": "rupestre",
+      "approx": true,
+      "text": "Grande estrutura de granito com caverna em sua base, na Terra Indígena São Marcos. As pinturas apresentam formas geométricas — círculos, linhas, retângulos e zigue-zagues. As escavações encontraram cerâmica, instrumentos de pedra, restos de peixes, conchas, sementes, objetos de adorno e sepultamentos.",
+      "importance": "Arte rupestre geométrica e vestígios de ocupação no extremo norte do país."
+    },
+    {
+      "id": "monte-alegre",
+      "x": 415.7, "y": 147.2,
+      "name": "Monte Alegre",
+      "state": "Pará",
+      "kind": "rupestre",
+      "approx": true,
+      "text": "Cavernas, abrigos rochosos e formações naturais preservam pinturas rupestres e outros vestígios, entre eles a região da Serra do Ererê.",
+      "importance": "Ajuda a modificar a antiga ideia de uma Amazônia ocupada apenas por pequenos grupos isolados."
+    },
+    {
+      "id": "litoral",
+      "x": 485.5, "y": 606,
+      "name": "Sítios arqueológicos do litoral — sambaquis",
+      "state": "Litoral brasileiro (SP, RJ, PR e SC)",
+      "kind": "litoral",
+      "approx": true,
+      "text": "Estruturas formadas principalmente pelo acúmulo de conchas, restos de alimentos e outros materiais relacionados às atividades humanas. Existem importantes conjuntos nos estados de Santa Catarina, São Paulo, Paraná e Rio de Janeiro.",
+      "importance": "Demonstram o uso intenso dos recursos do litoral — peixes, moluscos e outros animais — por populações sedentárias."
+    },
+    {
+      "id": "geoglifos",
+      "x": 126.9, "y": 296.4,
+      "name": "Geoglifos do Acre",
+      "state": "Acre",
+      "kind": "amazonia",
+      "approx": true,
+      "text": "Grandes figuras geométricas formadas por valas e muretas de terra. O IPHAN informa que mais de mil geoglifos já foram identificados no Acre, relacionados a populações que modificavam a paisagem há cerca de 2.500 anos.",
+      "importance": "Prova de ocupação antiga e planejada da paisagem na floresta amazônica."
+    },
+    {
+      "id": "terra-preta",
+      "x": 270.3, "y": 177.4,
+      "name": "Sítios de terra preta na Amazônia",
+      "state": "Amazônia",
+      "kind": "amazonia",
+      "approx": true,
+      "text": "Solo muito fértil, rico em matéria orgânica e carbono, formado pela ação humana ao longo de gerações, associado a cerâmicas e outros vestígios de antigas comunidades que manejavam plantas, alimentos e espaços de moradia.",
+      "importance": "Marcas de uma relação intensa e de longa duração entre sociedades humanas e floresta."
+    }
+  ],
+  "ameacas": [
+    { "title": "Expansão urbana", "text": "Construção de empreendimentos sem estudos prévios." },
+    { "title": "Desmatamento", "text": "Expansão da fronteira agrícola, especialmente na Amazônia e no Cerrado." },
+    { "title": "Mineração e grandes obras", "text": "Exploração mineral e instalação de grandes obras de infraestrutura." },
+    { "title": "Saque e comércio ilegal", "text": "Saque e comércio ilegal de artefatos." },
+    { "title": "Erosão e mudanças climáticas", "text": "Erosão, mudanças climáticas e elevação do nível do mar, que ameaçam especialmente os sambaquis do litoral." }
+  ],
+  "referencias": [
+    { "text": "BRASIL. Instituto do Patrimônio Histórico e Artístico Nacional (IPHAN). Patrimônio Arqueológico – Minas Gerais. Disponível em:", "url": "https://www.gov.br/iphan/pt-br/superintendencias/minas-gerais/patrimonio-arqueologico", "access": "Acesso em: 19 ago. 2026." },
+    { "text": "BRASIL. Instituto do Patrimônio Histórico e Artístico Nacional (IPHAN). Patrimônio Arqueológico – Pará. Disponível em:", "url": "https://www.gov.br/iphan/pt-br/superintendencias/para/patrimonio-arqueologico", "access": "Acesso em: 19 ago. 2026." },
+    { "text": "BRASIL. Instituto do Patrimônio Histórico e Artístico Nacional (IPHAN). Patrimônio Arqueológico – Roraima. Disponível em:", "url": "https://www.gov.br/iphan/pt-br/superintendencias/roraima/patrimonio-arqueologico", "access": "Acesso em: 19 ago. 2026." },
+    { "text": "BRASIL. Instituto do Patrimônio Histórico e Artístico Nacional (IPHAN). Patrimônio Mundial – Parque Nacional Serra da Capivara. Disponível em:", "url": "https://www.gov.br/iphan/pt-br/superintendencias/piaui/patrimonio-mundial", "access": "Acesso em: 19 ago. 2026." },
+    { "text": "CHIAPPE, Luis M. et al. Cretaceous bird from Brazil informs the evolution of the avian skull and brain. Nature, 2024. Disponível em:", "url": "https://www.nature.com/articles/s41586-024-08114-4", "access": "Acesso em: 19 ago. 2026." },
+    { "text": "BRASIL. Instituto do Patrimônio Histórico e Artístico Nacional (IPHAN). Legislação – Patrimônio Arqueológico. Disponível em:", "url": "https://www.gov.br/iphan/pt-br/patrimonio-cultural/patrimonio-arqueologico/legislacao", "access": "Acesso em: 10 set. 2026." },
+    { "text": "FUMDHAM. Fundação Museu do Homem Americano. Disponível em:", "url": "https://fumdham.org.br/", "access": "Acesso em: 2026." },
+    { "text": "FUNDO BRASIL. Povos indígenas: história, cultura e lutas. Disponível em:", "url": "https://www.fundobrasil.org.br/blog/povos-indigenas-historia-cultura-e-lutas/", "access": "Acesso em: 2026." },
+    { "text": "GEOPARK ARARIPE. Disponível em:", "url": "https://geoparkararipe.urca.br", "access": "Acesso em: 10 ago. 2026." },
+    { "text": "ICMBio. Parque Nacional da Serra da Capivara. Disponível em:", "url": "https://www.gov.br/icmbio/pt-br/assuntos/unidade-de-conservacao/unidades-de-biomas/caatinga/lista-de-ucs/parna-da-serra-da-capivara", "access": "Acesso em: 2026." },
+    { "text": "ICMBio. Parque Nacional do Catimbau. Disponível em:", "url": "https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/caatinga/lista-de-ucs/parna-do-catimbau", "access": "Acesso em: 2026." },
+    { "text": "MUSEU DOS DINOSSAUROS. Disponível em:", "url": "https://www.uftm.edu.br/museudosdinossauros", "access": "Acesso em: 10 ago. 2026." },
+    { "text": "SURVIVAL BRASIL. Povos indígenas no Brasil. Disponível em:", "url": "https://www.survivalbrasil.org/povos/indígenas-brasil", "access": "Acesso em: 2026." },
+    { "text": "UNESCO. Serra da Capivara National Park. Disponível em:", "url": "https://whc.unesco.org/en/list/606/", "access": "Acesso em: 19 ago. 2026." },
+    { "text": "BNDES. Parque Nacional Serra da Capivara. Disponível em:", "url": "https://bndes.gov.br/wps/portal/site/home/onde-atuamos/cultura-e-economia-criativa/patrimonio-cultural-brasileiro/projetos-apoiados/parque-nacional-serra-capivara", "access": "Acesso em: 2026." },
+    { "text": "Agência Gov. Sítios arqueológicos brasileiros. Disponível em:", "url": "https://agenciagov.ebc.com.br/noticias/202407/conheca-alguns-sitios-arqueologicos-brasileiros-que-sao-considerados-patrimonio-cultural-do-nosso-pais", "access": "Acesso em: 2026." }
+  ]
+}

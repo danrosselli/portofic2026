@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".5" r=".8">
+      <stop offset="0" stop-color="#2a2018"/><stop offset="1" stop-color="#16110d"/>
+    </radialGradient>
+    <pattern id="veins" width="90" height="90" patternUnits="userSpaceOnUse">
+      <path d="M0 45q22-12 45 0t45 0 45 0 45 0 45 0" fill="none" stroke="#20180f" stroke-width="6"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect width="800" height="1000" fill="url(#veins)" opacity=".5"/>
+
+  <g stroke-linecap="round" fill="none">
+    <!-- círculos concêntricos -->
+    <g transform="translate(260 360)" stroke="#c98a2b" stroke-width="7" opacity=".92">
+      <circle r="60"/><circle r="44"/><circle r="28"/><circle r="13"/>
+    </g>
+    <!-- zigue-zague -->
+    <path d="M120 560l40-46 40 46 40-46 40 46 40-46 40 46 40-46 40 46" stroke="#b0512a" stroke-width="8" opacity=".85"/>
+    <!-- retângulos -->
+    <g transform="translate(520 300)">
+      <rect x="0" y="0" width="120" height="80" stroke="#8a3d1f" stroke-width="9" opacity=".9"/>
+      <rect x="24" y="16" width="72" height="48" stroke="#c98a2b" stroke-width="5" opacity=".7"/>
+    </g>
+    <!-- linhas radiais -->
+    <g transform="translate(560 600)" stroke="#c98a2b" stroke-width="6" opacity=".8">
+      <path d="M0 0l-34-38M0 0l38-34M0 0l-44 22M0 0l-10 46M0 0l44-8M0 0l22 40"/>
+    </g>
+    <!-- sol / roda -->
+    <g transform="translate(150 720)" stroke="#8a3d1f" stroke-width="7" opacity=".85">
+      <circle r="34"/>
+      <path d="M0-44v-14M0 44v14M-44 0h-14M44 0h14"/>
+    </g>
+  </g>
+  <g fill="#b0512a" opacity=".6">
+    <circle cx="680" cy="860" r="7"/><circle cx="700" cy="830" r="5"/><circle cx="660" cy="830" r="4"/>
+    <circle cx="120" cy="180" r="8"/><circle cx="150" cy="160" r="5"/><circle cx="132" cy="210" r="5"/>
+  </g>
+</svg>

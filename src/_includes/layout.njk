@@ -4,23 +4,76 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title or site.title }}</title>
-  <meta name="description" content="{{ site.description }}">
+  <meta name="description" content="{{ description or site.description }}">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#14100c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="{{ '/' | url }}">{{ site.title }} <span>{{ site.subtitle }}</span></a>
-    <nav>
-      <a href="{{ '/' | url }}">Início</a>
-    </nav>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="scroll-progress" aria-hidden="true"><span data-progress-bar></span></div>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="{{ '/#inicio' | url }}">
+      <span class="brand-glyph" aria-hidden="true"></span>
+      <span class="brand-text">Arqueologia <em>no Brasil</em></span>
+    </a>
+    <p class="brand-meta mono" aria-hidden="true">Porto FIC 2026 · Jaú—SP</p>
+    <button class="menu-toggle mono" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+      <span class="menu-toggle-label">Índice</span>
+      <span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i></span>
+    </button>
   </header>
 
-  <main>
+  <div class="site-menu" id="site-menu" data-menu>
+    <div class="site-menu-inner">
+      <p class="menu-kicker mono">Roteiro de visita</p>
+      <nav aria-label="Índice do site">
+        <ol class="menu-list">
+          {% for s in project.sections %}
+          <li>
+            <a href="{{ '/' | url }}#{{ s.id }}" data-menu-link="{{ s.id }}">
+              <span class="menu-num mono">{{ s.num }}</span>
+              <span class="menu-label">{{ s.label }}</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ol>
+      </nav>
+      <div class="menu-foot mono">
+        <span>{{ project.school }}</span>
+        <span>{{ project.fair }} · {{ project.place }}</span>
+      </div>
+    </div>
+  </div>
+
+  <main id="conteudo">
     {{ content | safe }}
   </main>
 
   <footer class="site-footer">
-    <p>© {{ site.year }} {{ site.title }} — {{ site.subtitle }}</p>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-title">{{ project.title }} <span class="mono">{{ project.subtitle }}</span></p>
+        <p class="footer-line">{{ project.school }} — {{ project.fair }} — {{ project.place }} — {{ project.year }}</p>
+      </div>
+      <ul class="footer-members mono">
+        {% for m in project.members %}
+        <li>{{ m }}</li>
+        {% endfor %}
+      </ul>
+      <div class="footer-note">
+        <p>Trabalho escolar apresentado na Porto FIC 2026. Conteúdo acadêmico preservado a partir do documento original do projeto.</p>
+        <p><a class="footer-pdf" href="{{ '/Arqueologia_no_Brasil_Porto_FIC_2026.pdf' | url }}">Baixar o trabalho original (PDF)</a></p>
+      </div>
+    </div>
   </footer>
+
+  <script src="{{ '/js/main.js' | url }}" defer></script>
 </body>
 </html>

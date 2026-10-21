@@ -1,6 +1,9 @@
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/img");
+  eleventyConfig.addPassthroughCopy("src/js");
+  // PDF original do trabalho, disponibilizado para download
+  eleventyConfig.addPassthroughCopy("Arqueologia_no_Brasil_Porto_FIC_2026.pdf");
 
   return {
     dir: {

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".45" r=".78">
+      <stop offset="0" stop-color="#2c2119"/><stop offset="1" stop-color="#16110d"/>
+    </radialGradient>
+    <pattern id="rock" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M0 8q20 6 40 0t40 0M0 48q20 6 40 0t40 0" fill="none" stroke="#211810" stroke-width="5"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect width="800" height="1000" fill="url(#rock)" opacity=".4"/>
+
+  <g fill="none" stroke="#b0512a" stroke-linecap="round" stroke-linejoin="round">
+    <!-- caçador 1 -->
+    <g transform="translate(230 470)" stroke-width="10">
+      <path d="M0 0q-3 12 0 18 4-6 0-18z"/>
+      <path d="M-12 30l12-10 12 10-5 40-13-2z"/>
+      <path d="M-13 52l-16 12M13 52l16 12"/>
+      <path d="M18 22l34-8M52 16l-6 14"/>
+    </g>
+    <!-- caçador 2 -->
+    <g transform="translate(430 520)" stroke-width="9" stroke="#8a3d1f">
+      <path d="M0 0q-3 10 0 16 3-6 0-16z"/>
+      <path d="M-11 26l11-9 11 9-4 36-13-2z"/>
+      <path d="M-12 44l-14 10M12 44l14 10"/>
+      <path d="M-16 26l-26-12M16 26l26-12"/>
+    </g>
+    <!-- animal (cervídeo) -->
+    <g transform="translate(560 430)" stroke-width="9" stroke="#c25e33">
+      <path d="M0 40l6-30 4 10 3-14 0 18 9-8-4 10 9-2-5 10 11 2-7 10 2 6"/>
+      <path d="M-4 44q16 4 26 0M14 44q12 3 18 0"/>
+      <path d="M-6 70l-14 18M-2 70l-10 18"/>
+    </g>
+    <!-- aves / voadores -->
+    <g stroke-width="7" stroke="#c98a2b">
+      <path d="M180 200q-14-12-28 0M240 170q-12-10-24 0"/>
+      <path d="M620 640q-14-12-28 0"/>
+    </g>
+  </g>
+  <!-- linhas de solo -->
+  <g fill="none" stroke="#b0512a" stroke-width="4" opacity=".5">
+    <path d="M120 600q80 10 160 0t160 0 160 0 80 0"/>
+    <path d="M200 690q70 8 140 0t140 0"/>
+  </g>
+</svg>

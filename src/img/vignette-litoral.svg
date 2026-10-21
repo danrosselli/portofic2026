@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b9cfc0"/><stop offset="1" stop-color="#7f9f8f"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="280" fill="#efe3cf"/>
+  <circle cx="330" cy="58" r="26" fill="#c98a2b"/>
+  <rect x="0" y="150" width="400" height="130" fill="url(#sea)"/>
+  <g stroke="#f5ecdd" stroke-width="3" opacity=".6" fill="none">
+    <path d="M20 190q30 12 60 0t60 0 60 0 60 0 60 0 60 0 20 0"/>
+    <path d="M40 220q30 12 60 0t60 0 60 0 60 0 60 0"/>
+  </g>
+  <path d="M0 178q40-16 80 0t80 0 80 0 80 0 80 0v36q-40-10-80 0t-80 0-80 0-80 0-80 0z" fill="#cbb27f"/>
+  <!-- sambaqui -->
+  <path d="M120 230q80-110 160 0z" fill="#d6b98a"/>
+  <path d="M138 216q64-58 124 0" fill="none" stroke="#c9a267" stroke-width="6"/>
+  <path d="M152 228q56-44 108 0" fill="none" stroke="#b98a5a" stroke-width="6"/>
+  <g stroke="#8a5a32" stroke-width="3" fill="none" opacity=".8">
+    <path d="M168 240q10 6 20 0M196 244q10 6 20 0M216 240q10 6 20 0"/>
+  </g>
+</svg>
