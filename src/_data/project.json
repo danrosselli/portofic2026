@@ -175,10 +175,10 @@
     { "id": "ia", "title": "Inteligência artificial", "text": "Começa a ser utilizada na arqueologia: ajuda a analisar grandes quantidades de informações, identificar padrões em imagens e auxiliar na localização de possíveis sítios arqueológicos." }
   ],
   "estratos": [
-    { "depth": "0–20 cm", "label": "Camada A — solo vegetal", "find": "Carvão de fogueira e fragmentos de cerâmica", "note": "Cada achado é registrado com local, profundidade e posição." },
-    { "depth": "20–45 cm", "label": "Camada B — conchas e cinzas", "find": "Conchas de moluscos e restos de peixes", "note": "A composição das camadas revela a dieta e o uso do espaço." },
-    { "depth": "45–70 cm", "label": "Camada C — sepultamento", "find": "Sepultamento com oferendas", "note": "A posição do corpo e os objetos acompanham rituais coletivos." },
-    { "depth": "70–100 cm", "label": "Camada D — base antiga", "find": "Instrumentos de pedra lascada", "note": "Materiais mais profundos, em geral, correspondem a ocupações mais antigas." }
+    { "id": "a", "depth": "0–20 cm", "label": "Camada A — solo vegetal", "find": "Carvão de fogueira e fragmentos de cerâmica", "note": "Cada achado é registrado com local, profundidade e posição." },
+    { "id": "b", "depth": "20–45 cm", "label": "Camada B — conchas e cinzas", "find": "Conchas de moluscos e restos de peixes", "note": "A composição das camadas revela a dieta e o uso do espaço." },
+    { "id": "c", "depth": "45–70 cm", "label": "Camada C — sepultamento", "find": "Sepultamento com oferendas", "note": "A posição do corpo e os objetos acompanham rituais coletivos." },
+    { "id": "d", "depth": "70–100 cm", "label": "Camada D — base antiga", "find": "Instrumentos de pedra lascada", "note": "Materiais mais profundos, em geral, correspondem a ocupações mais antigas." }
   ],
   "sitios": [
     {

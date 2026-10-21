@@ -570,6 +570,9 @@ description: "Expedição digital pelo passado brasileiro: história da arqueolo
         {% for e in project.estratos %}
         <div class="pit-layer" data-pit-layer="{{ loop.index0 }}" aria-label="{{ e.label }}" data-find="{{ e.find }}" data-note="{{ e.note }}">
           <span class="mono pit-depth">{{ e.depth }}</span>
+          <span class="pit-artefact" aria-hidden="true">
+            <svg viewBox="0 0 64 64">{% include "icons/estrato-" ~ e.id ~ ".svg" %}</svg>
+          </span>
           <span class="pit-find" aria-hidden="true">{{ e.find }}</span>
         </div>
         {% endfor %}

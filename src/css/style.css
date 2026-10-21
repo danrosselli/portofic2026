@@ -1627,13 +1627,43 @@ section[id] {
   color: rgba(245, 236, 221, 0.9);
 }
 
+.pit-artefact {
+  margin-left: auto;
+  padding: 0 0.4rem;
+}
+
+.pit-artefact svg {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.pit-artefact .ea {
+  fill: none;
+  stroke: rgba(245, 236, 221, 0.88);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pit-artefact .ea-fill {
+  fill: rgba(245, 236, 221, 0.22);
+  stroke: none;
+}
+
+.pit-artefact .ea-dot {
+  fill: rgba(245, 236, 221, 0.6);
+  stroke: none;
+}
+
 .pit-find {
   font-family: var(--font-mono);
   font-size: 0.62rem;
   letter-spacing: 0.03em;
   color: rgba(245, 236, 221, 0.72);
-  margin-left: auto;
+  margin-left: 1rem;
   text-transform: none;
+  max-width: 55%;
 }
 
 .js .pit-layer.is-hidden {
@@ -2458,6 +2488,20 @@ section[id] {
 
   .excavation {
     grid-template-columns: 1fr;
+  }
+
+  .pit-layer {
+    height: 58px;
+    padding: 0 0.8rem;
+  }
+
+  .pit-artefact svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .pit-find {
+    display: none;
   }
 
   .site-panel {
