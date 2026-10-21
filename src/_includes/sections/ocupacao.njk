@@ -14,16 +14,19 @@
   <div class="section-body">
     <div class="routes-wrap reveal">
       <figure class="routes-figure">
-        <img
-          class="routes-map-img"
-          src="{{ '/img/mapa-rotas-migratorias.jpg' | url }}"
-          alt="Mapa ilustrado das rotas migratórias para a América: cor sólida para a hipótese mais aceita, via Estreito de Bering e Beringia; linha tracejada para a rota do Pacífico; linha pontilhada para a rota do Atlântico."
-          width="1536"
-          height="1024"
-          loading="lazy"
-          decoding="async">
+        <div class="routes-zoom" data-routes-zoom>
+          <img
+            class="routes-map-img"
+            src="{{ '/img/mapa-rotas-migratorias.jpg' | url }}"
+            alt="Mapa ilustrado das rotas migratórias para a América: cor sólida para a hipótese mais aceita, via Estreito de Bering e Beringia; linha tracejada para a rota do Pacífico; linha pontilhada para a rota do Atlântico."
+            width="1536"
+            height="1024"
+            loading="lazy"
+            decoding="async">
+        </div>
         <figcaption class="mono figure-caption">
           Mapa ilustrado das rotas migratórias descritas no trabalho — sem escala.
+          <span class="zoom-hint">· passe o mouse sobre o mapa para ampliar</span>
         </figcaption>
       </figure>
 

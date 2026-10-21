@@ -219,6 +219,33 @@
     });
   }
 
+  /* ── mapa da ocupação: zoom seguindo o ponteiro ─────── */
+  selector(doc, "[data-routes-zoom]").forEach(function (wrap) {
+    if (reduceMotion) return;
+    if (window.matchMedia && !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    function zoomAt(e) {
+      if (e.pointerType && e.pointerType !== "mouse") return;
+      const r = wrap.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      const x = ((e.clientX - r.left) / r.width) * 100;
+      const y = ((e.clientY - r.top) / r.height) * 100;
+      wrap.style.setProperty("--zx", Math.min(100, Math.max(0, x)).toFixed(2) + "%");
+      wrap.style.setProperty("--zy", Math.min(100, Math.max(0, y)).toFixed(2) + "%");
+      wrap.style.setProperty("--zoom", "1.85");
+      wrap.classList.add("is-zooming");
+    }
+
+    on(wrap, "pointerenter", zoomAt);
+    on(wrap, "pointermove", zoomAt);
+    on(wrap, "pointerleave", function () {
+      wrap.classList.remove("is-zooming");
+    });
+    on(wrap, "pointercancel", function () {
+      wrap.classList.remove("is-zooming");
+    });
+  });
+
   /* ── escavação interativa ────────────────────────────── */
   const excav = doc.querySelector("[data-excavation]");
   if (excav) {

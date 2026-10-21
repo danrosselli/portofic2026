@@ -999,21 +999,45 @@ section[id] {
 }
 
 .routes-map,
-.routes-map-img {
+.routes-zoom {
   display: block;
   width: 100%;
-  height: auto;
   border: 1px solid var(--line);
   background: var(--paper-2);
   box-shadow: var(--shadow-card);
 }
 
-.routes-map-img {
-  transition: filter 0.3s ease;
+.routes-zoom {
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
 }
 
-.routes-map-img:hover {
-  filter: saturate(1.04) contrast(1.02);
+.routes-map-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform-origin: 50% 50%;
+  transform: scale(1);
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.3s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.routes-zoom.is-zooming .routes-map-img {
+  transform: scale(var(--zoom, 1.9));
+  transform-origin: var(--zx, 50%) var(--zy, 50%);
+  transition: transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.3s ease;
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.routes-zoom.is-zooming {
+  cursor: zoom-out;
+}
+
+/* dica só aparece em apontadores que realmente passam mouse */
+.zoom-hint {
+  display: none;
 }
 
 .routes-map .land {
@@ -1118,6 +1142,13 @@ section[id] {
   margin: 0;
   font-size: 0.93rem;
   color: var(--ink-2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .zoom-hint {
+    display: inline;
+    color: var(--terra-2);
+  }
 }
 
 .routes-note {
