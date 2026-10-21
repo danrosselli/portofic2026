@@ -5,9 +5,9 @@ Site da **Port Fic 2026**, gerado com [Eleventy](https://www.11ty.dev/) e public
 ## Desenvolvimento
 
 ```bash
-npm install
-npm start        # servidor local com hot reload (http://localhost:8080)
-npm run build    # gera o site estático em _site/
+bun install          # instala as dependências
+bun run start        # servidor local com hot reload (http://localhost:8080)
+bun run build        # gera o site estático em _site/
 ```
 
 ## Estrutura
