@@ -189,7 +189,11 @@
       "kind": "rupestre",
       "approx": true,
       "text": "Localizado no sudeste do Piauí, foi criado em 1979 para proteger vestígios arqueológicos e possui uma das maiores concentrações de sítios pré-coloniais das Américas, com centenas de locais de pinturas e gravuras. Destaca-se o Boqueirão da Pedra Furada. Inscrito pela UNESCO na Lista do Patrimônio Mundial em 1991.",
-      "importance": "Um dos maiores conjuntos de arte rupestre do mundo e referência internacional da arqueologia brasileira."
+      "importance": "Um dos maiores conjuntos de arte rupestre do mundo e referência internacional da arqueologia brasileira.",
+      "img": "site-capivara.jpg",
+      "caption": "Pinturas rupestres nos abrigos de rocha do Parque Nacional da Serra da Capivara.",
+      "credit": "Artur Warchavchik · Wikimedia Commons (CC BY-SA 3.0)",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Pinturas_Rupestres_-_Serra_da_Capivara_I.jpg"
     },
     {
       "id": "sete-cidades",
@@ -199,7 +203,11 @@
       "kind": "rupestre",
       "approx": true,
       "text": "Citado no trabalho entre os muitos sítios arqueológicos espalhados pelo Brasil, no mesmo corredor de sítios do sudeste do Piauí.",
-      "importance": "Amplia o conjunto de áreas protegidas com vestígios pré-coloniais no Piauí."
+      "importance": "Amplia o conjunto de áreas protegidas com vestígios pré-coloniais no Piauí.",
+      "img": "site-sete-cidades.jpg",
+      "caption": "Formações rochosas esculpidas pela erosão no Parque Nacional de Sete Cidades.",
+      "credit": "Otávio Nogueira · Wikimedia Commons (CC BY 2.0)",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Parque_Nacional_de_Sete_Cidades_-_Piau%C3%AD_(3704754112).jpg"
     },
     {
       "id": "lagoa-santa",
@@ -209,7 +217,11 @@
       "kind": "caverna",
       "approx": true,
       "text": "Região com história de estudos desde o século XIX, pesquisada por Peter Wilhelm Lund. Na Lapa Vermelha IV foi encontrado o esqueleto de Luzia, com aproximadamente 11.500 anos. A Lapa da Cerca Grande, em Matozinhos, apresenta vestígios e pinturas rupestres.",
-      "importance": "Berço da arqueologia brasileira e local de um dos esqueletos mais antigos do país."
+      "importance": "Berço da arqueologia brasileira e local de um dos esqueletos mais antigos do país.",
+      "img": "site-lagoa-santa.jpg",
+      "caption": "Vista aérea do abrigo rochoso da Lapa do Santo, em Matozinhos (MG), escavado por equipe da USP.",
+      "credit": "Strauss MAE-USP · Wikimedia Commons (CC BY-SA 4.0)",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Lapa_do_Santo_-_Overview_outside_drone_-_2.png"
     },
     {
       "id": "pedra-pintada",
@@ -219,7 +231,11 @@
       "kind": "rupestre",
       "approx": true,
       "text": "Grande estrutura de granito com caverna em sua base, na Terra Indígena São Marcos. As pinturas apresentam formas geométricas — círculos, linhas, retângulos e zigue-zagues. As escavações encontraram cerâmica, instrumentos de pedra, restos de peixes, conchas, sementes, objetos de adorno e sepultamentos.",
-      "importance": "Arte rupestre geométrica e vestígios de ocupação no extremo norte do país."
+      "importance": "Arte rupestre geométrica e vestígios de ocupação no extremo norte do país.",
+      "img": "site-pedra-pintada.jpg",
+      "caption": "Pinturas rupestres em vermelho na Pedra Pintada, em Roraima.",
+      "credit": "Andreaugfonseca · Wikimedia Commons (CC BY-SA 4.0)",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Exemplo_de_pintura_rupestre_na_Pedra_Pintada_(Roraima).jpg"
     },
     {
       "id": "monte-alegre",
@@ -229,7 +245,11 @@
       "kind": "rupestre",
       "approx": true,
       "text": "Cavernas, abrigos rochosos e formações naturais preservam pinturas rupestres e outros vestígios, entre eles a região da Serra do Ererê.",
-      "importance": "Ajuda a modificar a antiga ideia de uma Amazônia ocupada apenas por pequenos grupos isolados."
+      "importance": "Ajuda a modificar a antiga ideia de uma Amazônia ocupada apenas por pequenos grupos isolados.",
+      "img": "site-monte-alegre.jpg",
+      "caption": "Paisagem de lagos e floresta na região de Monte Alegre, no Pará, onde ficam os sítios com pinturas.",
+      "credit": "Marcelo Castro · Wikimedia Commons (CC BY 3.0)",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Tal_de_7_lagos..._-_panoramio.jpg"
     },
     {
       "id": "litoral",
@@ -239,7 +259,11 @@
       "kind": "litoral",
       "approx": true,
       "text": "Estruturas formadas principalmente pelo acúmulo de conchas, restos de alimentos e outros materiais relacionados às atividades humanas. Existem importantes conjuntos nos estados de Santa Catarina, São Paulo, Paraná e Rio de Janeiro.",
-      "importance": "Demonstram o uso intenso dos recursos do litoral — peixes, moluscos e outros animais — por populações sedentárias."
+      "importance": "Demonstram o uso intenso dos recursos do litoral — peixes, moluscos e outros animais — por populações sedentárias.",
+      "img": "site-litoral.jpg",
+      "caption": "Camadas de conchas e sedimentos de um sambaqui, em corte (modelo de estratigrafia).",
+      "credit": "Thigruner · Wikimedia Commons (domínio público)",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Modelo_de_extratifica%C3%A7%C3%A3o_de_sambaqui.jpg"
     },
     {
       "id": "geoglifos",
@@ -249,7 +273,11 @@
       "kind": "amazonia",
       "approx": true,
       "text": "Grandes figuras geométricas formadas por valas e muretas de terra. O IPHAN informa que mais de mil geoglifos já foram identificados no Acre, relacionados a populações que modificavam a paisagem há cerca de 2.500 anos.",
-      "importance": "Prova de ocupação antiga e planejada da paisagem na floresta amazônica."
+      "importance": "Prova de ocupação antiga e planejada da paisagem na floresta amazônica.",
+      "img": "site-geoglifos.jpg",
+      "caption": "Geoglifo da Fazenda Colorada, no Acre: círculo e linhas marcados no solo, vistos do alto.",
+      "credit": "Sanna Saunaluoma · Wikimedia Commons (CC BY-SA 3.0)",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Fazenda_Colorada.jpg"
     },
     {
       "id": "terra-preta",
@@ -259,7 +287,11 @@
       "kind": "amazonia",
       "approx": true,
       "text": "Solo muito fértil, rico em matéria orgânica e carbono, formado pela ação humana ao longo de gerações, associado a cerâmicas e outros vestígios de antigas comunidades que manejavam plantas, alimentos e espaços de moradia.",
-      "importance": "Marcas de uma relação intensa e de longa duração entre sociedades humanas e floresta."
+      "importance": "Marcas de uma relação intensa e de longa duração entre sociedades humanas e floresta.",
+      "img": "site-terra-preta.jpg",
+      "caption": "Amostra de terra preta: solo escuro, rico em carvão e matéria orgânica.",
+      "credit": "Bruno Glaser · Wikimedia Commons (CC BY 4.0)",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Nutrient-enriched_terra_preta_soil.jpg"
     }
   ],
   "ameacas": [

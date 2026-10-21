@@ -44,8 +44,19 @@
     <div class="site-panels">
       {% for s in project.sitios %}
       <article class="site-panel{{ ' is-active' if loop.first else '' }}" id="site-panel-{{ s.id }}" data-site-panel="{{ s.id }}">
-        <div class="site-visual" aria-hidden="true">
-          <img src="{{ ('/img/vignette-' ~ s.kind ~ '.svg') | url }}" alt="" loading="lazy">
+        <div class="site-visual">
+          {% if s.img %}
+          <figure class="site-photo">
+            <img src="{{ ('/img/' ~ s.img) | url }}" alt="{{ s.caption }}" width="1200" height="800" loading="lazy" decoding="async">
+            {% if s.credit %}
+            <figcaption class="mono site-credit">
+              {{ s.caption }} — <a href="{{ s.creditUrl }}" target="_blank" rel="noopener noreferrer">{{ s.credit }}</a>
+            </figcaption>
+            {% endif %}
+          </figure>
+          {% else %}
+          <img class="site-vignette" src="{{ ('/img/vignette-' ~ s.kind ~ '.svg') | url }}" alt="" loading="lazy">
+          {% endif %}
         </div>
         <div class="site-copy">
           <p class="mono site-approx">{{ s.state }}{% if s.approx %} · posição aproximada{% endif %}</p>

@@ -113,14 +113,14 @@
       return sel.charAt(0) === "[" ? sel : "[" + sel + "]";
     };
     const tabs = selector(doc, q(tabSel));
-    const panels = selector(doc, q(panelSel));
     const groupMap = {};
-    const attrName = tabSel.replace(/^.*?data-/, "");
+    const tabAttr = tabSel.replace(/^.*?data-/, "");
+    const panelAttr = panelSel.replace(/^.*?data-/, "");
     tabs.forEach(function (tab) {
-      const id = tab.getAttribute("data-" + attrName);
+      const id = tab.getAttribute("data-" + tabAttr);
       groupMap[id] = {
         tab: tab,
-        panel: doc.querySelector(q(panelSel) + '[data-' + attrName + '="' + id + '"]')
+        panel: doc.querySelector("[data-" + panelAttr + '="' + id + '"]')
       };
     });
 
@@ -139,7 +139,7 @@
 
     tabs.forEach(function (tab) {
       on(tab, "click", function () {
-        activate(tab.getAttribute("data-" + attrName));
+        activate(tab.getAttribute("data-" + tabAttr));
       });
     });
     return { activate: activate, groupMap: groupMap };

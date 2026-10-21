@@ -2110,6 +2110,7 @@ section[id] {
 }
 
 .site-visual {
+  position: relative;
   min-height: 260px;
   background: var(--paper-2);
   border: 1px solid var(--line-soft);
@@ -2120,6 +2121,57 @@ section[id] {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* foto real do sítio + crédito */
+.site-photo {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  min-height: 260px;
+}
+
+.site-photo img {
+  flex: 1 1 auto;
+  min-height: 0;
+  filter: saturate(1.02) contrast(1.02);
+}
+
+.site-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(41, 32, 25, 0.22) 100%),
+    linear-gradient(180deg, rgba(176, 81, 42, 0.08), transparent 35%);
+  mix-blend-mode: multiply;
+}
+
+.site-credit {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 1.5rem 0.7rem 0.5rem;
+  font-size: 0.58rem;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: rgba(245, 240, 232, 0.92);
+  background: linear-gradient(180deg, transparent, rgba(28, 22, 17, 0.82));
+}
+
+.site-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.site-credit a:hover {
+  color: #fff;
 }
 
 .site-copy {
@@ -2509,8 +2561,14 @@ section[id] {
     padding: 1rem;
   }
 
-  .site-visual {
+  .site-visual,
+  .site-photo {
     min-height: 200px;
+  }
+
+  .site-credit {
+    font-size: 0.54rem;
+    padding: 1.2rem 0.6rem 0.45rem;
   }
 
   .timeline-track {
