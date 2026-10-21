@@ -998,11 +998,22 @@ section[id] {
   margin: 0;
 }
 
-.routes-map {
+.routes-map,
+.routes-map-img {
+  display: block;
   width: 100%;
   height: auto;
   border: 1px solid var(--line);
   background: var(--paper-2);
+  box-shadow: var(--shadow-card);
+}
+
+.routes-map-img {
+  transition: filter 0.3s ease;
+}
+
+.routes-map-img:hover {
+  filter: saturate(1.04) contrast(1.02);
 }
 
 .routes-map .land {
