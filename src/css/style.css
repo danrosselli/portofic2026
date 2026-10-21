@@ -1025,7 +1025,7 @@ section[id] {
 }
 
 .routes-zoom.is-zooming .routes-map-img {
-  transform: scale(var(--zoom, 1.9));
+  transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--zoom, 1.85));
   transform-origin: var(--zx, 50%) var(--zy, 50%);
   transition: transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.3s ease;
   filter: saturate(1.05) contrast(1.03);

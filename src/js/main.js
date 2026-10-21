@@ -224,15 +224,35 @@
     if (reduceMotion) return;
     if (window.matchMedia && !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
+    /* o centro do zoom para antes da borda (margem de segurança para o
+       ponteiro); nesse ponto o deslocamento compensa e a imagem mostra
+       até a sua borda final, sem deixar área vazia. */
+    const pad = 12;
+    const level = 1.85;
+
     function zoomAt(e) {
       if (e.pointerType && e.pointerType !== "mouse") return;
       const r = wrap.getBoundingClientRect();
       if (!r.width || !r.height) return;
-      const x = ((e.clientX - r.left) / r.width) * 100;
-      const y = ((e.clientY - r.top) / r.height) * 100;
-      wrap.style.setProperty("--zx", Math.min(100, Math.max(0, x)).toFixed(2) + "%");
-      wrap.style.setProperty("--zy", Math.min(100, Math.max(0, y)).toFixed(2) + "%");
-      wrap.style.setProperty("--zoom", "1.85");
+
+      const rawX = ((e.clientX - r.left) / r.width) * 100;
+      const rawY = ((e.clientY - r.top) / r.height) * 100;
+      const x = Math.min(100 - pad, Math.max(pad, rawX));
+      const y = Math.min(100 - pad, Math.max(pad, rawY));
+
+      /* desloca a imagem para encaixar a borda correspondente na janela */
+      let tx = 0;
+      let ty = 0;
+      if (rawX > 100 - pad) tx = ((100 - x) / 100) * r.width * (1 - level);
+      else if (rawX < pad) tx = -(x / 100) * r.width * (1 - level);
+      if (rawY > 100 - pad) ty = ((100 - y) / 100) * r.height * (1 - level);
+      else if (rawY < pad) ty = -(y / 100) * r.height * (1 - level);
+
+      wrap.style.setProperty("--zx", x.toFixed(2) + "%");
+      wrap.style.setProperty("--zy", y.toFixed(2) + "%");
+      wrap.style.setProperty("--zoom", String(level));
+      wrap.style.setProperty("--tx", tx.toFixed(1) + "px");
+      wrap.style.setProperty("--ty", ty.toFixed(1) + "px");
       wrap.classList.add("is-zooming");
     }
 
