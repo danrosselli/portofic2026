@@ -1,0 +1,14 @@
+{
+  "name": "portofic2026",
+  "version": "1.0.0",
+  "description": "Site da Feira de Ciências Port Fic 2026",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7"
+  }
+}
