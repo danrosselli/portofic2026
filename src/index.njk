@@ -812,7 +812,7 @@ description: "Expedição digital pelo passado brasileiro: história da arqueolo
       {% for s in project.sitios %}
       <article class="site-panel{{ ' is-active' if loop.first else '' }}" id="site-panel-{{ s.id }}" data-site-panel="{{ s.id }}">
         <div class="site-visual" aria-hidden="true">
-          <img src="{{ '/img/vignette-' ~ s.kind ~ '.svg' | url }}" alt="" loading="lazy">
+          <img src="{{ ('/img/vignette-' ~ s.kind ~ '.svg') | url }}" alt="" loading="lazy">
         </div>
         <div class="site-copy">
           <p class="mono site-approx">{{ s.state }}{% if s.approx %} · posição aproximada{% endif %}</p>
