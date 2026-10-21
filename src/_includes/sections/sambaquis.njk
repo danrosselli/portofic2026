@@ -29,7 +29,25 @@
         </button>
         {% endfor %}
       </div>
-      <figcaption class="mono sambaqui-caption">
+
+      <div class="sambaqui-stack-tools">
+        <button
+          type="button"
+          class="sambaqui-view mono"
+          data-sambaqui-view
+          aria-pressed="false"
+          data-label-exploded="Ver o sambaqui completo"
+          data-label-assembled="Separar as camadas"
+        >
+          Ver o sambaqui completo
+        </button>
+      </div>
+
+      <figcaption
+        class="mono sambaqui-caption"
+        data-caption-exploded="Corte esquemático de um sambaqui em cinco camadas — clique em uma camada para explorá-la"
+        data-caption-assembled="Sambaqui completo — as camadas se sobrepõem do topo à base, como no monumento original"
+      >
         Corte esquemático de um sambaqui em cinco camadas — clique em uma camada para explorá-la
       </figcaption>
     </figure>

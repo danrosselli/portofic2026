@@ -161,6 +161,120 @@
     sambaqui.activate(firstSambaquiTab.getAttribute("data-sambaqui-tab"));
   }
 
+  /* ── sambaqui: hit-test por alfa ─────────────────────────
+     As camadas se sobrepõem e as imagens têm margens
+     transparentes, então o :hover nativo acendia a camada errada.
+     Aqui o ponteiro é consultado contra o canal alfa de cada
+     imagem, na ordem em que elas são desenhadas (de cima para
+     baixo, respeitando a hierarquia da pilha). */
+  let sambaquiClearHover = function () {};
+  if (sambaquiStack) {
+    const sLayers = selector(sambaquiStack, ".sambaqui-layer");
+    const hits = sLayers.map(function (layer) {
+      const item = { layer: layer, img: layer.querySelector("img"), w: 0, h: 0, alpha: null };
+
+      function bake() {
+        const img = item.img;
+        if (!img || !img.naturalWidth) return;
+        try {
+          const W = 256;
+          const H = Math.max(1, Math.round((img.naturalHeight / img.naturalWidth) * W));
+          const cv = doc.createElement("canvas");
+          cv.width = W;
+          cv.height = H;
+          const ctx = cv.getContext("2d", { willReadFrequently: true });
+          ctx.drawImage(img, 0, 0, W, H);
+          const px = ctx.getImageData(0, 0, W, H).data;
+          const alpha = new Uint8Array(W * H);
+          for (let i = 0, j = 3; i < alpha.length; i += 1, j += 4) alpha[i] = px[j];
+          item.w = W;
+          item.h = H;
+          item.alpha = alpha;
+          sambaquiStack.classList.add("has-hit");
+        } catch (err) {
+          item.alpha = null; /* pixels ilegíveis: mantém clique/hover nativos */
+        }
+      }
+
+      if (item.img && item.img.complete && item.img.naturalWidth) bake();
+      else on(item.img, "load", bake);
+      return item;
+    });
+
+    /* a ordem visual segue o desenho das camadas; em foco, a ativa
+       ganha z-index 10 e passa a ser testada primeiro */
+    function orderedLayers() {
+      if (sambaquiStack.classList.contains("is-assembled")) return sLayers;
+      const active = sambaquiStack.querySelector(".sambaqui-layer.is-active");
+      if (!active) return sLayers;
+      return [active].concat(sLayers.filter(function (l) { return l !== active; }));
+    }
+
+    function layerAt(x, y) {
+      const ordered = orderedLayers();
+      for (let i = 0; i < ordered.length; i += 1) {
+        const item = hits[sLayers.indexOf(ordered[i])];
+        if (!item || !item.alpha || !item.img) continue;
+        const r = item.img.getBoundingClientRect();
+        if (!r.width || !r.height) continue;
+        if (x < r.left || x > r.right || y < r.top || y > r.bottom) continue;
+        const u = Math.floor(((x - r.left) / r.width) * item.w);
+        const v = Math.floor(((y - r.top) / r.height) * item.h);
+        const col = Math.min(item.w - 1, Math.max(0, u));
+        const row = Math.min(item.h - 1, Math.max(0, v));
+        if (item.alpha[row * item.w + col] > 90) return item.layer;
+      }
+      return null;
+    }
+
+    let hoveredLayer = null;
+    function setHover(layer) {
+      if (hoveredLayer === layer) return;
+      if (hoveredLayer) hoveredLayer.classList.remove("is-hover");
+      hoveredLayer = layer;
+      if (hoveredLayer) hoveredLayer.classList.add("is-hover");
+    }
+    sambaquiClearHover = function () { setHover(null); };
+
+    let hoverFrame = 0;
+    on(sambaquiStack, "pointermove", function (e) {
+      if (e.pointerType === "touch" || hoverFrame) return;
+      const x = e.clientX;
+      const y = e.clientY;
+      hoverFrame = requestAnimationFrame(function () {
+        hoverFrame = 0;
+        setHover(layerAt(x, y));
+      });
+    });
+    on(sambaquiStack, "pointerleave", function () { setHover(null); });
+    on(sambaquiStack, "click", function (e) {
+      /* cliques vindos do teclado chegam com o próprio botão como
+         alvo e já são tratados pelo bindPanelGroup acima */
+      if (e.target !== sambaquiStack) return;
+      const layer = layerAt(e.clientX, e.clientY);
+      if (layer) sambaqui.activate(layer.getAttribute("data-sambaqui-tab"));
+    });
+  }
+
+  /* ── sambaqui: visão do todo (camadas montadas) ────────── */
+  const wholeBtn = doc.querySelector("[data-sambaqui-view]");
+  if (wholeBtn && sambaquiStack) {
+    const wholeCaption = doc.querySelector("[data-caption-exploded]");
+    const captionExploded = wholeCaption ? wholeCaption.getAttribute("data-caption-exploded") : "";
+    const captionWhole = wholeCaption ? wholeCaption.getAttribute("data-caption-assembled") : "";
+    const labelExploded = wholeBtn.getAttribute("data-label-exploded") || wholeBtn.textContent.trim();
+    const labelWhole = wholeBtn.getAttribute("data-label-assembled") || "";
+
+    on(wholeBtn, "click", function () {
+      const whole = !sambaquiStack.classList.contains("is-assembled");
+      sambaquiStack.classList.toggle("is-assembled", whole);
+      wholeBtn.setAttribute("aria-pressed", String(whole));
+      wholeBtn.textContent = whole ? labelWhole : labelExploded;
+      if (wholeCaption) wholeCaption.textContent = whole ? captionWhole : captionExploded;
+      sambaquiClearHover();
+    });
+  }
+
   /* sítios: lista + marcadores do mapa */
   const sites = bindPanelGroup("data-site-tab", "data-site-panel", function (id) {
     const marker = doc.querySelector('[data-site-marker="' + id + '"]');

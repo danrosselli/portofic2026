@@ -1227,7 +1227,8 @@ section[id] {
   cursor: pointer;
   z-index: var(--z, 1);
   transform: translateX(calc(-50% + var(--dx, 0px)));
-  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.24, 1), opacity 0.35s ease;
+  transition: top 0.55s cubic-bezier(0.22, 0.61, 0.24, 1),
+    transform 0.45s cubic-bezier(0.22, 0.61, 0.24, 1), opacity 0.35s ease;
 }
 
 .sambaqui-layer img {
@@ -1241,11 +1242,12 @@ section[id] {
     filter 0.35s ease;
 }
 
-.sambaqui-layer:nth-child(1) { --top: 0%;    --dx: 0px;    --z: 5; }
-.sambaqui-layer:nth-child(2) { --top: 15.4%; --dx: 2.2%;   --z: 4; }
-.sambaqui-layer:nth-child(3) { --top: 30.8%; --dx: -1.8%;  --z: 3; }
-.sambaqui-layer:nth-child(4) { --top: 46.2%; --dx: 1.4%;   --z: 2; }
-.sambaqui-layer:nth-child(5) { --top: 61.6%; --dx: -0.8%;  --z: 1; }
+/* camadas alinhadas verticalmente — sem deslocamento horizontal (--dx) */
+.sambaqui-layer:nth-child(1) { --top: 0%;    --z: 5; }
+.sambaqui-layer:nth-child(2) { --top: 15.4%; --z: 4; }
+.sambaqui-layer:nth-child(3) { --top: 30.8%; --z: 3; }
+.sambaqui-layer:nth-child(4) { --top: 46.2%; --z: 2; }
+.sambaqui-layer:nth-child(5) { --top: 61.6%; --z: 1; }
 
 .sambaqui-stack.is-focusing .sambaqui-layer {
   opacity: 0.3;
@@ -1262,7 +1264,28 @@ section[id] {
     drop-shadow(0 0 22px rgba(255, 214, 150, 0.35));
 }
 
+/* ── visão do todo: camadas montadas, o topo cobre as de baixo ── */
+.sambaqui-stack.is-assembled .sambaqui-layer {
+  opacity: 1;
+}
+
+.sambaqui-stack.is-assembled .sambaqui-layer.is-active {
+  z-index: var(--z);
+  transform: translateX(calc(-50% + var(--dx, 0px)));
+}
+
+.sambaqui-stack.is-assembled .sambaqui-layer.is-active img {
+  filter: drop-shadow(0 16px 14px rgba(28, 12, 4, 0.45));
+}
+
+.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(1) { --top: 10%; }
+.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(2) { --top: 17.4%; }
+.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(3) { --top: 24.8%; }
+.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(4) { --top: 32.2%; }
+.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(5) { --top: 39.6%; }
+
 .sambaqui-layer:hover img,
+.sambaqui-layer.is-hover img,
 .sambaqui-layer:focus-visible img {
   transform: scaleY(0.78) scale(1.03);
 }
@@ -1291,9 +1314,20 @@ section[id] {
 }
 
 .sambaqui-layer:hover .layer-dot,
+.sambaqui-layer.is-hover .layer-dot,
 .sambaqui-layer.is-active .layer-dot {
   background: var(--cream);
   color: var(--terra-2);
+}
+
+/* hit-test por alfa (main.js): enquanto o navegador não consegue ler
+   os pixels das imagens, as camadas mantêm clique/hover nativos */
+.sambaqui-stack.has-hit {
+  cursor: pointer;
+}
+
+.sambaqui-stack.has-hit .sambaqui-layer {
+  pointer-events: none;
 }
 
 .sambaqui-caption {
@@ -1302,6 +1336,40 @@ section[id] {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(253, 246, 234, 0.7);
+}
+
+/* barra de ferramentas da pilha — visão do todo */
+.sambaqui-stack-tools {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.8rem;
+}
+
+.sambaqui-view {
+  padding: 0.5rem 0.85rem;
+  background: rgba(28, 12, 4, 0.3);
+  border: 1px solid rgba(253, 246, 234, 0.35);
+  color: rgba(253, 246, 234, 0.9);
+  cursor: pointer;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.sambaqui-view:hover {
+  background: rgba(253, 246, 234, 0.14);
+}
+
+.sambaqui-view[aria-pressed="true"] {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: var(--terra-2);
+}
+
+.sambaqui-view:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
 }
 
 .sambaqui-side .block-label {
