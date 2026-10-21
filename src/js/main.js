@@ -241,9 +241,11 @@
       if (e.pointerType === "touch" || hoverFrame) return;
       const x = e.clientX;
       const y = e.clientY;
+      /* sobre o botão de visão do todo (dentro do quadro), não acende nada */
+      const overStack = e.target === sambaquiStack;
       hoverFrame = requestAnimationFrame(function () {
         hoverFrame = 0;
-        setHover(layerAt(x, y));
+        setHover(overStack ? layerAt(x, y) : null);
       });
     });
     on(sambaquiStack, "pointerleave", function () { setHover(null); });

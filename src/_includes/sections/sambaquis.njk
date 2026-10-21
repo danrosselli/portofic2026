@@ -28,19 +28,21 @@
           <span class="layer-dot mono" aria-hidden="true">{{ loop.index }}</span>
         </button>
         {% endfor %}
-      </div>
 
-      <div class="sambaqui-stack-tools">
-        <button
-          type="button"
-          class="sambaqui-view mono"
-          data-sambaqui-view
-          aria-pressed="false"
-          data-label-exploded="Ver o sambaqui completo"
-          data-label-assembled="Separar as camadas"
-        >
-          Ver o sambaqui completo
-        </button>
+        <!-- fica dentro do quadro (por último, para não deslocar
+             os seletores :nth-child das camadas) -->
+        <div class="sambaqui-stack-tools">
+          <button
+            type="button"
+            class="sambaqui-view mono"
+            data-sambaqui-view
+            aria-pressed="false"
+            data-label-exploded="Ver o sambaqui completo"
+            data-label-assembled="Separar as camadas"
+          >
+            Ver o sambaqui completo
+          </button>
+        </div>
       </div>
 
       <figcaption

@@ -1278,11 +1278,11 @@ section[id] {
   filter: drop-shadow(0 16px 14px rgba(28, 12, 4, 0.45));
 }
 
-.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(1) { --top: 10%; }
-.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(2) { --top: 17.4%; }
-.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(3) { --top: 24.8%; }
-.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(4) { --top: 32.2%; }
-.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(5) { --top: 39.6%; }
+.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(1) { --top: 4%; }
+.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(2) { --top: 14%; }
+.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(3) { --top: 24%; }
+.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(4) { --top: 34%; }
+.sambaqui-stack.is-assembled .sambaqui-layer:nth-child(5) { --top: 44%; }
 
 .sambaqui-layer:hover img,
 .sambaqui-layer.is-hover img,
@@ -1338,11 +1338,12 @@ section[id] {
   color: rgba(253, 246, 234, 0.7);
 }
 
-/* barra de ferramentas da pilha — visão do todo */
+/* botão de visão do todo — canto superior direito do quadro */
 .sambaqui-stack-tools {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 0.8rem;
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  z-index: 30; /* acima das camadas (z 5–1) */
 }
 
 .sambaqui-view {
