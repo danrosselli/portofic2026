@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title or site.title }}</title>
   <meta name="description" content="{{ site.description }}">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/">{{ site.title }} <span>{{ site.subtitle }}</span></a>
+    <a class="brand" href="{{ '/' | url }}">{{ site.title }} <span>{{ site.subtitle }}</span></a>
     <nav>
-      <a href="/">Início</a>
+      <a href="{{ '/' | url }}">Início</a>
     </nav>
   </header>
 

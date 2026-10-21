@@ -9,6 +9,8 @@ export default function (eleventyConfig) {
       includes: "_includes",
       data: "_data",
     },
+    // GitHub Pages project site: site is served from /portofic2026/
+    pathPrefix: "/portofic2026/",
     templateFormats: ["njk", "md", "html"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
