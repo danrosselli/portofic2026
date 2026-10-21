@@ -118,20 +118,23 @@
     const panelAttr = panelSel.replace(/^.*?data-/, "");
     tabs.forEach(function (tab) {
       const id = tab.getAttribute("data-" + tabAttr);
-      groupMap[id] = {
-        tab: tab,
-        panel: doc.querySelector("[data-" + panelAttr + '="' + id + '"]')
-      };
+      if (!groupMap[id]) {
+        groupMap[id] = {
+          tabs: [],
+          panel: doc.querySelector("[data-" + panelAttr + '="' + id + '"]')
+        };
+      }
+      groupMap[id].tabs.push(tab);
     });
 
     function activate(id) {
       Object.keys(groupMap).forEach(function (key) {
         const item = groupMap[key];
         const active = key === id;
-        if (item.tab) {
-          item.tab.classList.toggle("is-active", active);
-          item.tab.setAttribute("aria-pressed", String(active));
-        }
+        item.tabs.forEach(function (tab) {
+          tab.classList.toggle("is-active", active);
+          tab.setAttribute("aria-pressed", String(active));
+        });
         if (item.panel) item.panel.classList.toggle("is-active", active);
       });
       if (markerSel && typeof markerSel === "function") markerSel(id);
@@ -148,23 +151,15 @@
   /* linha do tempo */
   bindPanelGroup("data-timeline-tab", "data-timeline-panel");
 
-  /* sambaqui: também realça as camadas no corte */
-  const sambaquiSvg = doc.querySelector("[data-sambaqui] .sambaqui-svg");
-  const svgLayerMap = {
-    topo: "sg-topo",
-    "conchas-superiores": "sg-conchas",
-    sepultamentos: "sg-sep",
-    restos: "sg-restos",
-    base: "sg-base"
-  };
-  bindPanelGroup("data-sambaqui-tab", "data-sambaqui-panel", function (id) {
-    if (!sambaquiSvg) return;
-    const activeEl = svgLayerMap[id];
-    selector(sambaquiSvg, ".sg-layer").forEach(function (g) {
-      g.classList.toggle("is-on", g.id === activeEl);
-    });
-    sambaquiSvg.classList.add("is-focusing");
+  /* sambaqui: foca a camada ativa na pilha de imagens */
+  const sambaquiStack = doc.querySelector("[data-sambaqui] .sambaqui-stack");
+  const sambaqui = bindPanelGroup("data-sambaqui-tab", "data-sambaqui-panel", function () {
+    if (sambaquiStack) sambaquiStack.classList.add("is-focusing");
   });
+  const firstSambaquiTab = doc.querySelector("[data-sambaqui-tab]");
+  if (firstSambaquiTab) {
+    sambaqui.activate(firstSambaquiTab.getAttribute("data-sambaqui-tab"));
+  }
 
   /* sítios: lista + marcadores do mapa */
   const sites = bindPanelGroup("data-site-tab", "data-site-panel", function (id) {

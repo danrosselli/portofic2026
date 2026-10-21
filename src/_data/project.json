@@ -135,30 +135,35 @@
     {
       "id": "topo",
       "label": "Topo — moradias",
+      "img": "sambaqui-topo.png",
       "title": "Moradias no topo do sambaqui",
       "text": "As moradias eram construídas diretamente no topo dos próprios sambaquis ou nas áreas planas ao redor: cabanas simples feitas com materiais vegetais perecíveis, projetadas para aproveitar a elevação natural contra as marés e o vento."
     },
     {
       "id": "conchas-superiores",
       "label": "Camadas de conchas",
+      "img": "sambaqui-conchas.png",
       "title": "Camadas sucessivas de conchas",
       "text": "Camadas sucessivas de novas conchas aumentavam o tamanho do monumento ao longo de gerações. Os sambaquis são amontoados de conchas, restos de peixes, restos de fogueiras, pedras e terra."
     },
     {
       "id": "sepultamentos",
       "label": "Sepultamentos",
+      "img": "sambaqui-sepultamentos.png",
       "title": "Rituais coletivos de sepultamento",
       "text": "O sepultamento era um ritual coletivo e elaborado. Os corpos eram depositados em covas rasas dentro dos montes de conchas, muitas vezes acompanhados de banquetes comunitários, fogueiras e oferendas de artefatos. Os sambaquis serviam como locais de moradia, áreas de rituais e cemitérios."
     },
     {
       "id": "restos",
       "label": "Restos de alimentos",
+      "img": "sambaqui-restos.png",
       "title": "Conchas, peixes e fogueiras",
       "text": "Os sambaquis são formados por conchas e restos de peixes, restos de fogueiras, pedras e terra — vestígios da fartura de peixes e moluscos dos ecossistemas costeiros que sustentava essas comunidades sedentárias."
     },
     {
       "id": "base",
       "label": "Base — solo e areia",
+      "img": "sambaqui-base.png",
       "title": "A base sobre a paisagem costeira",
       "text": "Construídos ao longo da costa do Brasil e em algumas margens de rios, entre cerca de 8.000 e 2.000 anos atrás, principalmente no litoral banhado pela Mata Atlântica, em estados como Rio de Janeiro, São Paulo e Santa Catarina."
     }

@@ -1202,52 +1202,106 @@ section[id] {
 
 .sambaqui-figure {
   position: relative;
+  margin: 0;
 }
 
-.sambaqui-svg {
+/* pilha explodida de camadas (imagens com fundo transparente) */
+.sambaqui-stack {
+  position: relative;
+  aspect-ratio: 10 / 13;
+  border: 1px solid rgba(253, 246, 234, 0.35);
+  background:
+    radial-gradient(130% 70% at 50% -6%, rgba(255, 231, 196, 0.16), transparent 62%),
+    radial-gradient(95% 45% at 50% 106%, rgba(28, 12, 4, 0.4), transparent 72%),
+    #6f3c1f;
+}
+
+.sambaqui-layer {
+  position: absolute;
+  top: var(--top, 0%);
+  left: 50%;
+  width: 92%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  z-index: var(--z, 1);
+  transform: translateX(calc(-50% + var(--dx, 0px)));
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.24, 1), opacity 0.35s ease;
+}
+
+.sambaqui-layer img {
+  display: block;
   width: 100%;
   height: auto;
-  border: 1px solid rgba(253, 246, 234, 0.35);
-  background: #6f3c1f;
+  transform: scaleY(0.78);
+  transform-origin: 50% 0;
+  filter: drop-shadow(0 16px 14px rgba(28, 12, 4, 0.45));
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.24, 1),
+    filter 0.35s ease;
 }
 
-.sambaqui-svg .sg-layer {
-  transition: opacity 0.4s ease;
+.sambaqui-layer:nth-child(1) { --top: 0%;    --dx: 0px;    --z: 5; }
+.sambaqui-layer:nth-child(2) { --top: 15.4%; --dx: 2.2%;   --z: 4; }
+.sambaqui-layer:nth-child(3) { --top: 30.8%; --dx: -1.8%;  --z: 3; }
+.sambaqui-layer:nth-child(4) { --top: 46.2%; --dx: 1.4%;   --z: 2; }
+.sambaqui-layer:nth-child(5) { --top: 61.6%; --dx: -0.8%;  --z: 1; }
+
+.sambaqui-stack.is-focusing .sambaqui-layer {
+  opacity: 0.3;
 }
 
-.sambaqui-svg.is-focusing .sg-layer {
-  opacity: 0.32;
-}
-
-.sambaqui-svg.is-focusing .sg-layer.is-on {
+.sambaqui-stack.is-focusing .sambaqui-layer.is-active {
   opacity: 1;
+  z-index: 10;
+  transform: translateX(calc(-50% + var(--dx, 0px))) translateY(-1.4%) scale(1.03);
 }
 
-.sambaqui-svg.is-focusing .sg-layer.is-on .sg-huts,
-.sambaqui-svg.is-focusing .sg-layer.is-on .sg-burials {
-  opacity: 1;
+.sambaqui-stack.is-focusing .sambaqui-layer.is-active img {
+  filter: drop-shadow(0 22px 20px rgba(20, 8, 2, 0.55))
+    drop-shadow(0 0 22px rgba(255, 214, 150, 0.35));
 }
 
-.sambaqui-dots {
+.sambaqui-layer:hover img,
+.sambaqui-layer:focus-visible img {
+  transform: scaleY(0.78) scale(1.03);
+}
+
+.sambaqui-layer:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 6px;
+}
+
+.layer-dot {
   position: absolute;
-  inset: 0;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  pointer-events: none;
-}
-
-.sambaqui-dots li {
-  position: absolute;
-  width: 26px;
-  height: 26px;
+  top: 30%;
+  left: -0.35rem;
+  width: 1.7rem;
+  height: 1.7rem;
   display: grid;
   place-items: center;
   border: 1.5px solid var(--cream);
   border-radius: 50%;
+  background: rgba(36, 27, 19, 0.6);
   color: var(--cream);
-  font-size: 0.7rem;
-  background: rgba(36, 27, 19, 0.55);
+  font-size: 0.66rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.sambaqui-layer:hover .layer-dot,
+.sambaqui-layer.is-active .layer-dot {
+  background: var(--cream);
+  color: var(--terra-2);
+}
+
+.sambaqui-caption {
+  margin-top: 0.9rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(253, 246, 234, 0.7);
 }
 
 .sambaqui-side .block-label {
@@ -2650,6 +2704,11 @@ section[id] {
 
   .timeline-panel {
     animation: none;
+  }
+
+  .sambaqui-layer,
+  .sambaqui-layer img {
+    transition: none;
   }
 
   .art-dialog[open] {
