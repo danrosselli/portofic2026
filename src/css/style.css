@@ -35,6 +35,7 @@
   --content: 76rem;
   --measure: 38rem;
   --radius: 2px;
+  --thumb: 18px; /* bolinha dos comparadores — define o curso do slider */
 
   --shadow-card: 0 1px 0 rgba(36, 27, 19, 0.08), 0 18px 40px -22px rgba(36, 27, 19, 0.35);
 }
@@ -2019,19 +2020,31 @@ section[id] {
 
 .reveal-range {
   display: block;
-  width: 100%;
-  margin: 1rem 0 0.6rem;
+  /* O trilho avança meio-diâmetro para cada lado: assim o centro da
+     bolinha percorre exatamente a largura da figura e acompanha a linha
+     divisória (left: --clip%) também nas pontas, onde o recuo nativo do
+     thumb costuma deixá-la para trás. A máscara do gradiente esconde o
+     avanço, então o trilho visível continua borda a borda. */
+  width: calc(100% + var(--thumb));
+  margin: 1rem calc(var(--thumb) * -0.5) 0.6rem;
   appearance: none;
   height: 4px;
   border-radius: 0;
-  background: var(--line);
+  --track: var(--line);
+  background: linear-gradient(
+    to right,
+    transparent 0 calc(var(--thumb) / 2),
+    var(--track) calc(var(--thumb) / 2) calc(100% - var(--thumb) / 2),
+    transparent calc(100% - var(--thumb) / 2) 100%
+  );
   outline-offset: 4px;
 }
 
 .reveal-range::-webkit-slider-thumb {
   appearance: none;
-  width: 18px;
-  height: 18px;
+  box-sizing: border-box;
+  width: var(--thumb);
+  height: var(--thumb);
   border-radius: 50%;
   background: var(--terra);
   border: 2px solid var(--cream);
@@ -2040,12 +2053,17 @@ section[id] {
 }
 
 .reveal-range::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
+  box-sizing: border-box;
+  width: var(--thumb);
+  height: var(--thumb);
   border-radius: 50%;
   background: var(--terra);
   border: 2px solid var(--cream);
   cursor: ew-resize;
+}
+
+.reveal-range::-moz-range-track {
+  background: inherit;
 }
 
 .scan-labels,
@@ -2092,9 +2110,10 @@ section[id] {
 }
 
 .lidar-figure .reveal-range {
-  margin: 0.9rem 1.2rem 0;
-  width: calc(100% - 2.4rem);
-  background: rgba(245, 236, 221, 0.25);
+  /* mesmo curso do escaneamento: trilho de borda a borda da cena, para a
+     bolinha e o divisor (que ocupa toda a figura) andarem juntos */
+  margin: 0.9rem calc(var(--thumb) * -0.5) 0;
+  --track: rgba(245, 236, 221, 0.25);
 }
 
 .lidar-figure .lidar-labels {
