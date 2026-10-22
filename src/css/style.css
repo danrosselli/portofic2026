@@ -1781,12 +1781,21 @@ section[id] {
   color: var(--cream);
   border-top: 1px solid rgba(245, 236, 221, 0.25);
   transition: opacity 0.4s ease, transform 0.4s ease;
+  /* sprite de 4 faixas de terra (uma por camada) + véu escuro p/ contraste do texto */
+  background-image:
+    linear-gradient(rgba(24, 17, 10, 0.38), rgba(24, 17, 10, 0.38)),
+    url("../img/estratos-sprite.webp");
+  background-size: 100% 100%, 100% 400%;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, 0 0;
+  text-shadow: 0 1px 2px rgba(10, 7, 4, 0.6);
 }
 
-.pit-layer[data-pit-layer="0"] { background: #7c6a4a; }
-.pit-layer[data-pit-layer="1"] { background: #a8824f; }
-.pit-layer[data-pit-layer="2"] { background: #8f5a33; }
-.pit-layer[data-pit-layer="3"] { background: #c9a267; }
+/* recorte do sprite: 4 faixas empilhadas → 0%, 33.333%, 66.667%, 100% */
+.pit-layer[data-pit-layer="0"] { background-color: #7c6a4a; background-position: 0 0, 0 0; }
+.pit-layer[data-pit-layer="1"] { background-color: #a8824f; background-position: 0 0, 0 33.333%; }
+.pit-layer[data-pit-layer="2"] { background-color: #8f5a33; background-position: 0 0, 0 66.667%; }
+.pit-layer[data-pit-layer="3"] { background-color: #c9a267; background-position: 0 0, 0 100%; }
 
 .pit-layer .pit-depth {
   font-size: 0.68rem;
