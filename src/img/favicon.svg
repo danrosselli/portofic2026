@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Arqueologia no Brasil">
+  <!-- fundo papel — mesma paleta clara do site -->
+  <rect width="64" height="64" rx="12" fill="#f1e8d9"/>
+  <!-- glifo da marca: círculos concêntricos terracota -->
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#b0512a" stroke-width="4"/>
+  <circle cx="32" cy="32" r="12" fill="none" stroke="#b0512a" stroke-width="2.5" opacity="0.55"/>
+  <!-- ponto central — o "achado" -->
+  <circle cx="32" cy="32" r="4" fill="#c98a2b"/>
+</svg>
