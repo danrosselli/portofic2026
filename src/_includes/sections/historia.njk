@@ -26,9 +26,15 @@
     <div class="timeline-panels">
       {% for t in project.timeline %}
       <div class="timeline-panel{{ ' is-active' if loop.first else '' }}" id="panel-{{ t.id }}" aria-labelledby="tab-{{ t.id }}" data-timeline-panel="{{ t.id }}">
-        <p class="mono panel-marker">{{ t.marker }}</p>
-        <h3>{{ t.title }}</h3>
-        <p>{{ t.text }}</p>
+        <figure class="panel-media">
+          <img src="{{ ('/img/' + t.img) | url }}" alt="{{ t.imgAlt }}" width="640" height="480" loading="lazy" decoding="async">
+          <figcaption class="mono">{{ t.credit }}</figcaption>
+        </figure>
+        <div class="panel-body">
+          <p class="mono panel-marker">{{ t.marker }}</p>
+          <h3>{{ t.title }}</h3>
+          <p>{{ t.text }}</p>
+        </div>
       </div>
       {% endfor %}
     </div>

@@ -933,13 +933,42 @@ section[id] {
   background: var(--charcoal-2);
   border: 1px solid rgba(245, 236, 221, 0.12);
   padding: 2rem 2.2rem;
-  max-width: 52rem;
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 26rem) minmax(0, 1fr);
+  gap: 2.2rem;
+  align-items: start;
   animation: panelIn 0.45s ease both;
 }
 
 @keyframes panelIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: none; }
+}
+
+.panel-media {
+  margin: 0;
+}
+
+.panel-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid rgba(245, 236, 221, 0.16);
+  filter: saturate(0.92);
+}
+
+.panel-media figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.56rem;
+  line-height: 1.5;
+  color: rgba(245, 236, 221, 0.45);
+  overflow-wrap: anywhere;
+}
+
+.panel-body {
+  min-width: 0;
 }
 
 .panel-marker {
@@ -951,6 +980,7 @@ section[id] {
 .timeline-panel h3 {
   font-size: 1.6rem;
   color: var(--cream);
+  margin-top: 0;
 }
 
 .timeline-panel p {
@@ -2767,6 +2797,11 @@ section[id] {
     gap: 0.8rem;
   }
 
+  .timeline-panel {
+    grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+    gap: 1.6rem;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
   }
@@ -2831,6 +2866,15 @@ section[id] {
   .timeline-panel,
   .timeline-fact {
     padding: 1.3rem 1.4rem;
+  }
+
+  .timeline-panel {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  .panel-media img {
+    aspect-ratio: 16 / 9;
   }
 
   .hero-actions .btn {

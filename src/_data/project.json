@@ -66,49 +66,73 @@
       "id": "colonial",
       "marker": "Séc. XVI–XIX",
       "title": "Primeiros estudos e coleta de vestígios",
-      "text": "Os primeiros estudos arqueológicos começaram ainda no período colonial, quando pesquisadores e viajantes encontravam objetos indígenas, pinturas rupestres e outros vestígios antigos. No início, as pesquisas eram feitas de maneira bastante simples: exploravam-se cavernas, rios e sítios, e os objetos eram recolhidos para estudá-los. Muitas vezes, esses materiais eram levados para museus e coleções."
+      "text": "Os primeiros estudos arqueológicos começaram ainda no período colonial, quando pesquisadores e viajantes encontravam objetos indígenas, pinturas rupestres e outros vestígios antigos. No início, as pesquisas eram feitas de maneira bastante simples: exploravam-se cavernas, rios e sítios, e os objetos eram recolhidos para estudá-los. Muitas vezes, esses materiais eram levados para museus e coleções.",
+      "img": "tl-colonial.jpg",
+      "imgAlt": "Gravura do século XVI de indígenas tupinambá observados por Hans Staden",
+      "credit": "Hans Staden (1552) · domínio público · Wikimedia Commons"
     },
     {
       "id": "lund",
       "marker": "Séc. XIX",
       "title": "Peter Wilhelm Lund",
-      "text": "Naturalista dinamarquês que estudou fósseis e vestígios humanos em cavernas de Minas Gerais, na região de Lagoa Santa. O IPHAN o considera o “Pai da Arqueologia” no Brasil. Lund pesquisou cavernas da região e encontrou restos humanos e de animais extintos."
+      "text": "Naturalista dinamarquês que estudou fósseis e vestígios humanos em cavernas de Minas Gerais, na região de Lagoa Santa. O IPHAN o considera o “Pai da Arqueologia” no Brasil. Lund pesquisou cavernas da região e encontrou restos humanos e de animais extintos.",
+      "img": "tl-lund.jpg",
+      "imgAlt": "Ilustração de Peter Wilhelm Lund trabalhando em uma caverna calcária no Brasil",
+      "credit": "P.A. Brandt · domínio público · Wikimedia Commons"
     },
     {
       "id": "cientifico",
       "marker": "Séc. XX",
       "title": "A transição para métodos científicos",
-      "text": "Com o passar do tempo, a arqueologia se tornou mais organizada e passou a utilizar métodos científicos, como escavações cuidadosas, análise de materiais e técnicas para descobrir a idade dos vestígios. A arqueologia brasileira evoluiu muito durante o século XX e continua avançando até hoje."
+      "text": "Com o passar do tempo, a arqueologia se tornou mais organizada e passou a utilizar métodos científicos, como escavações cuidadosas, análise de materiais e técnicas para descobrir a idade dos vestígios. A arqueologia brasileira evoluiu muito durante o século XX e continua avançando até hoje.",
+      "img": "tl-cientifico.jpg",
+      "imgAlt": "Arqueóloga documentando minuciosamente um sepultamento na Lapa do Santo",
+      "credit": "Strauss MAE-USP · CC BY-SA 4.0 · Wikimedia Commons"
     },
     {
       "id": "paulo",
       "marker": "Séc. XX",
       "title": "Paulo Duarte",
-      "text": "Importante defensor da preservação do patrimônio arqueológico brasileiro, destacou-se entre os pesquisadores que contribuíram para a arqueologia do país."
+      "text": "Importante defensor da preservação do patrimônio arqueológico brasileiro, destacou-se entre os pesquisadores que contribuíram para a arqueologia do país.",
+      "img": "tl-paulo.jpg",
+      "imgAlt": "Escavação arqueológica em Mariana, Minas Gerais, com quadras e camadas expostas",
+      "credit": "Paulo Castagna · CC BY-SA 4.0 · Wikimedia Commons"
     },
     {
       "id": "capivara",
       "marker": "1979",
       "title": "Serra da Capivara e Niède Guidon",
-      "text": "Niède Guidon se destacou pelos estudos realizados na região da Serra da Capivara (Piauí). O Parque Nacional da Serra da Capivara foi criado em 1979 para proteger os vestígios da região, que possui uma das maiores concentrações de sítios arqueológicos pré-coloniais das Américas, com milhares de pinturas e gravuras rupestres."
+      "text": "Niède Guidon se destacou pelos estudos realizados na região da Serra da Capivara (Piauí). O Parque Nacional da Serra da Capivara foi criado em 1979 para proteger os vestígios da região, que possui uma das maiores concentrações de sítios arqueológicos pré-coloniais das Américas, com milhares de pinturas e gravuras rupestres.",
+      "img": "tl-capivara.jpg",
+      "imgAlt": "Pinturas rupestres na rocha do Parque Nacional da Serra da Capivara",
+      "credit": "Roberto Scielzo Leone · CC BY-SA 4.0 · Wikimedia Commons"
     },
     {
       "id": "luzia",
       "marker": "≈ 11.500 anos",
       "title": "Luzia",
-      "text": "Um dos esqueletos humanos mais antigos já encontrados no Brasil, descoberto em Minas Gerais, na Lapa Vermelha IV, com aproximadamente 11,5 mil anos de idade."
+      "text": "Um dos esqueletos humanos mais antigos já encontrados no Brasil, descoberto em Minas Gerais, na Lapa Vermelha IV, com aproximadamente 11,5 mil anos de idade.",
+      "img": "tl-luzia.jpg",
+      "imgAlt": "Molde do crânio de Luzia, Lapa Vermelha IV, com aproximadamente 11.500 anos",
+      "credit": "Ryan Somma · CC BY-SA 2.0 · Wikimedia Commons"
     },
     {
       "id": "unesco",
       "marker": "1991",
       "title": "Patrimônio Mundial da UNESCO",
-      "text": "O conjunto arqueológico da Serra da Capivara, de grande importância internacional, foi inscrito pela UNESCO na Lista do Patrimônio Mundial."
+      "text": "O conjunto arqueológico da Serra da Capivara, de grande importância internacional, foi inscrito pela UNESCO na Lista do Patrimônio Mundial.",
+      "img": "tl-unesco.jpg",
+      "imgAlt": "Vista da paisagem ao amanhecer no Parque Nacional da Serra da Capivara",
+      "credit": "Mateus S. Figueiredo · CC BY-SA 4.0 · Wikimedia Commons"
     },
     {
       "id": "hoje",
       "marker": "Hoje",
       "title": "Tecnologia e interdisciplinaridade",
-      "text": "Atualmente, os arqueólogos utilizam equipamentos modernos e trabalham junto com especialistas de outras áreas para estudar os vestígios encontrados. Escavações e pesquisas também ajudam a preservar lugares importantes para a história e a cultura do país."
+      "text": "Atualmente, os arqueólogos utilizam equipamentos modernos e trabalham junto com especialistas de outras áreas para estudar os vestígios encontrados. Escavações e pesquisas também ajudam a preservar lugares importantes para a história e a cultura do país.",
+      "img": "tl-hoje.jpg",
+      "imgAlt": "Vista aérea por drone do sítio arqueológico da Lapa do Santo",
+      "credit": "Strauss MAE-USP · CC BY-SA 4.0 · Wikimedia Commons"
     }
   ],
   "rotas": [
