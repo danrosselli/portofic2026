@@ -1136,7 +1136,7 @@ section[id] {
 
 .rota h3 {
   font-size: 1.15rem;
-  margin-bottom: 0.4rem;
+  margin: 0.8rem 0 0.4rem;
 }
 
 .rota p {
@@ -1684,7 +1684,7 @@ section[id] {
   padding: 0;
   width: min(92vw, 44rem);
   max-height: 90vh;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .art-dialog::backdrop {
@@ -1693,6 +1693,8 @@ section[id] {
 }
 
 .art-dialog[open] {
+  display: flex;
+  flex-direction: column;
   animation: dialogIn 0.35s ease both;
 }
 
@@ -1723,10 +1725,21 @@ section[id] {
 }
 
 .art-dialog-img {
+  flex: 0 0 auto;
   width: 100%;
   max-height: 58vh;
   object-fit: cover;
   border-bottom: 1px solid rgba(245, 236, 221, 0.2);
+}
+
+.art-dialog-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.9rem 1.6rem 1.6rem;
+  overflow-wrap: anywhere;
 }
 
 .art-dialog-tag {
@@ -1743,6 +1756,22 @@ section[id] {
 .art-dialog p {
   color: var(--on-dark-soft);
   margin: 0;
+}
+
+.art-dialog-source {
+  margin-top: 0.9rem;
+  font-size: 0.66rem;
+}
+
+.art-dialog-source a {
+  color: var(--terra-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.art-dialog-source a:hover {
+  color: var(--terra);
 }
 
 /* ══════════ 06 · MÉTODOS ══════════ */

@@ -68,7 +68,7 @@
     ] %}
     {% for a in arts %}
     <figure class="art-card reveal">
-      <button class="art-open" type="button" data-art-open data-art-title="{{ a.title }}" data-art-text="{{ a.text }} {{ a.credit }}. Fonte: {{ a.srcUrl }}" aria-haspopup="dialog">
+      <button class="art-open" type="button" data-art-open data-art-title="{{ a.title }}" data-art-text="{{ a.text }} {{ a.credit }}." data-art-src="{{ a.srcUrl }}" aria-haspopup="dialog">
         <img src="{{ a.src | url }}" alt="{{ a.title }} — fotografia de arte rupestre brasileira" loading="lazy">
         <span class="art-zoom mono" aria-hidden="true">ampliar ⊕</span>
       </button>
@@ -90,8 +90,13 @@
   <dialog class="art-dialog" data-art-dialog aria-labelledby="art-dialog-title">
     <button class="art-close mono" type="button" data-art-close aria-label="Fechar">fechar ×</button>
     <img class="art-dialog-img" data-art-dialog-img alt="">
-    <p class="mono art-dialog-tag">Fotografia · acervo aberto</p>
-    <h3 id="art-dialog-title" data-art-dialog-title></h3>
-    <p data-art-dialog-text></p>
+    <div class="art-dialog-body">
+      <p class="mono art-dialog-tag">Fotografia · acervo aberto</p>
+      <h3 id="art-dialog-title" data-art-dialog-title></h3>
+      <p data-art-dialog-text></p>
+      <p class="mono art-dialog-source" data-art-dialog-source-wrap hidden>
+        <a data-art-dialog-source target="_blank" rel="noopener noreferrer">fonte ↗</a>
+      </p>
+    </div>
   </dialog>
 </section>

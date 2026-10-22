@@ -447,18 +447,30 @@
     const dialogImg = dialog.querySelector("[data-art-dialog-img]");
     const dialogTitle = dialog.querySelector("[data-art-dialog-title]");
     const dialogText = dialog.querySelector("[data-art-dialog-text]");
+    const dialogSource = dialog.querySelector("[data-art-dialog-source]");
+    const dialogSourceWrap = dialog.querySelector("[data-art-dialog-source-wrap]");
     const closeBtn = dialog.querySelector("[data-art-close]");
 
     function openArt(btn) {
       const img = btn.querySelector("img");
       const title = btn.getAttribute("data-art-title") || "";
       const text = btn.getAttribute("data-art-text") || "";
+      const src = btn.getAttribute("data-art-src") || "";
       if (img && dialogImg) {
         dialogImg.src = img.src;
         dialogImg.alt = img.alt;
       }
       if (dialogTitle) dialogTitle.textContent = title;
       if (dialogText) dialogText.textContent = text;
+      if (dialogSource && dialogSourceWrap) {
+        if (src) {
+          dialogSource.href = src;
+          dialogSourceWrap.hidden = false;
+        } else {
+          dialogSource.removeAttribute("href");
+          dialogSourceWrap.hidden = true;
+        }
+      }
       if (typeof dialog.showModal === "function") {
         dialog.showModal();
         if (closeBtn) closeBtn.focus();
