@@ -2089,13 +2089,23 @@ section[id] {
   background: var(--forest-2);
 }
 
+.lidar-frames {
+  position: relative;
+}
+
 .lidar-scene {
+  display: block;
   width: 100%;
   height: auto;
 }
 
-.lidar-scene .lidar-canopy {
-  transition: clip-path 0.25s ease;
+/* camada superior (floresta): cobre só o quadro da cena e é recortada por --clip */
+.lidar-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .lidar-divider {

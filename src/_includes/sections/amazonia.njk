@@ -15,61 +15,28 @@
 
   <div class="lidar reveal" data-reveal-slider data-slider-min="0" data-slider-max="100">
     <div class="lidar-figure">
-      <svg class="lidar-scene" viewBox="0 0 900 470" role="img" aria-label="Experiência LiDAR: a vegetação é removida para revelar o relevo e estruturas de terra sob a floresta">
-        <defs>
-          <linearGradient id="lg-terrain" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#3c2f22"/><stop offset=".6" stop-color="#52402b"/><stop offset="1" stop-color="#2c2318"/>
-          </linearGradient>
-          <radialGradient id="lg-glow" cx=".5" cy=".42" r=".6">
-            <stop offset="0" stop-color="#6b8f5e" stop-opacity=".35"/><stop offset="1" stop-color="#6b8f5e" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-
-        <!-- terreno (camada de baixo) -->
-        <g class="lidar-terrain">
-          <rect width="900" height="470" fill="url(#lg-terrain)"/>
-          <rect width="900" height="470" fill="url(#lg-glow)"/>
-          <!-- curvas de nível -->
-          <g fill="none" stroke="#8f7a5c" stroke-width="1.4" opacity=".6">
-            <path d="M0 130q120-14 240 0t240 0 240 0 180 0"/>
-            <path d="M0 190q120-16 240 0t240 0 240 0 180 0"/>
-            <path d="M0 250q120-14 240 0t240 0 240 0 180 0"/>
-            <path d="M0 310q120-12 240 0t240 0 240 0 180 0"/>
-          </g>
-          <!-- geoglifos: quadrados, retângulos e círculos -->
-          <g class="lidar-geoglyphs" fill="none" stroke="#c9a267" stroke-width="3">
-            <rect x="180" y="180" width="90" height="90" transform="rotate(-8 225 225)"/>
-            <rect x="330" y="300" width="120" height="70" transform="rotate(6 390 335)"/>
-            <rect x="520" y="120" width="80" height="80" transform="rotate(14 560 160)"/>
-            <circle cx="640" cy="330" r="46"/>
-            <circle cx="640" cy="330" r="30" stroke-width="2"/>
-            <path d="M200 300 l-70 30 M620 420 l-120 10 M420 220 l30 -80 M700 120 l-10 90"/>
-          </g>
-          <!-- canais e caminhos -->
-          <path d="M120 470 Q 260 380 430 372 T 760 250" fill="none" stroke="#8f7a5c" stroke-width="5" opacity=".8"/>
-          <path d="M120 470 Q 260 380 430 372 T 760 250" fill="none" stroke="#c9a267" stroke-width="2" stroke-dasharray="10 8"/>
-        </g>
-
-        <!-- vegetação (camada de cima) -->
-        <g class="lidar-canopy reveal-top">
-          <rect width="900" height="470" fill="#223226"/>
-          <rect width="900" height="470" fill="url(#lg-glow)"/>
-          <g class="lidar-trees" fill="#2f4738">
-            <circle cx="70" cy="90" r="52"/><circle cx="180" cy="70" r="60"/><circle cx="300" cy="110" r="55"/>
-            <circle cx="430" cy="70" r="62"/><circle cx="560" cy="95" r="50"/><circle cx="680" cy="75" r="58"/>
-            <circle cx="810" cy="110" r="54"/><circle cx="120" cy="210" r="48"/><circle cx="250" cy="240" r="56"/>
-            <circle cx="390" cy="200" r="52"/><circle cx="520" cy="230" r="60"/><circle cx="650" cy="190" r="50"/>
-            <circle cx="790" cy="230" r="58"/><circle cx="170" cy="360" r="55"/><circle cx="320" cy="390" r="62"/>
-            <circle cx="470" cy="350" r="52"/><circle cx="610" cy="390" r="58"/><circle cx="750" cy="360" r="56"/>
-            <circle cx="860" cy="400" r="50"/>
-          </g>
-          <g class="lidar-trees" fill="#1d3024">
-            <circle cx="140" cy="140" r="44"/><circle cx="360" cy="150" r="48"/><circle cx="600" cy="140" r="46"/>
-            <circle cx="700" cy="270" r="50"/><circle cx="240" cy="330" r="44"/><circle cx="540" cy="310" r="46"/>
-            <circle cx="420" cy="280" r="40"/><circle cx="80" cy="300" r="42"/>
-          </g>
-        </g>
-      </svg>
+      <div class="lidar-frames">
+        <!-- terreno (camada de baixo) — revelado pelo slider -->
+        <img
+          class="lidar-scene"
+          src="{{ '/img/lidar-relevo.webp' | url }}"
+          width="1024"
+          height="535"
+          alt="Relevo revelado pelo LiDAR: terreno com curvas de nível e geoglifos quadrados e circulares"
+          loading="lazy"
+          decoding="async"
+        >
+        <!-- floresta (camada superior, recortada por --clip) -->
+        <img
+          class="lidar-cover reveal-top"
+          src="{{ '/img/lidar-floresta.webp' | url }}"
+          width="1024"
+          height="535"
+          alt="Floresta amazônica densa vista do alto"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
       <div class="lidar-divider" aria-hidden="true"></div>
       <input class="reveal-range" type="range" min="0" max="100" value="12" aria-label="LiDAR: arraste para remover a vegetação e revelar o relevo">
       <div class="lidar-labels mono">
