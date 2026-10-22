@@ -2712,6 +2712,17 @@ section[id] {
   color: var(--cream);
 }
 
+.footer-note p.footer-made {
+  margin: 0.5rem 0 0;
+  font-size: 0.68rem;
+  color: var(--on-dark-soft);
+}
+
+.footer-heart {
+  color: #e63946;
+  font-style: normal;
+}
+
 /* ══════════ RESPONSIVO ══════════ */
 @media (max-width: 64rem) {
   .section-head {
