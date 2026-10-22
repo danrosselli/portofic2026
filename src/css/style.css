@@ -2723,6 +2723,16 @@ section[id] {
   font-style: normal;
 }
 
+.footer-note p.footer-made a.footer-made-link {
+  color: var(--terra-soft);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-note p.footer-made a.footer-made-link:hover {
+  color: var(--cream);
+}
+
 /* ══════════ RESPONSIVO ══════════ */
 @media (max-width: 64rem) {
   .section-head {
